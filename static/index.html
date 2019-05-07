@@ -8,11 +8,8 @@
     <meta name="Description" content="Columbia University Libraries is a top-tier academic research library, serving one of the world's most important centers of research and learning.">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Toolkit -->
+    <!-- CUL Toolkit -->
     <link rel="stylesheet" type="text/css" href="css/cul-toolkit.css" />
-
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
 
     <style>
       #top-solid-divider {
@@ -137,24 +134,42 @@
 
 <pre class="border p-4 language-html" data-lang="html"><code><!--
 -->&lt;!-- Toolkit Styles (including Bootstrap 4 CSS) --&gt;
-&lt;link rel="stylesheet" type="text/css" href="https://toolkit.library.columbia.edu/v3/js/cul-toolkit.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://toolkit.library.columbia.edu/v3/css/cul-toolkit.css" /&gt;
 
 &lt;!-- Toolkit JavaScript (including Bootstrap 4 JS) --&gt;
 &lt;script src="https://toolkit.library.columbia.edu/v3/js/cul-toolkit.js"&gt;&lt;/script&gt;<!--
 --></code></pre>
 
-<p class="lead">And optionally include FontAwesome and jQuery, or provide your own copies of each:</p>
+        <h2>FontAwesome</h2>
+        <p class="lead">We've started using FontAwesome here at CUL. If your CUL site needs FontAwesome, you'll have to include it yourself.  You can get it from one of the following locations, depending on your needs:</p>
 
 <pre class="border p-4 language-html" data-lang="html"><code><!--
--->&lt;!-- FontAwesome --&gt;
-&lt;link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous"&gt;
+-->&lt;!-- Using the FontAwesome Free CDN --&gt;
+&lt;script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"&gt;&lt;/script&gt;
 
-&lt;!-- jQuery 3 --&gt;
+&lt;!-- Using the FontAwesome Pro CDN (assuming you have a Pro license)--&gt;
+&lt;script defer src="https://pro.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-RLPiEwcAdrH2NjFcwJipJtlFoIN1xvqPYeeDX5yYtSNu+HTIkQCDvPQ9thsUnPUS" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+&lt;!-- Using the CUL CDN for FontAwesome PRO (assuming you have a Pro license)--&gt;
+&lt;script defer src="https://cdn.cul.columbia.edu/fontawesome/pro/v5.x/js/all.js" integrity="sha384-RLPiEwcAdrH2NjFcwJipJtlFoIN1xvqPYeeDX5yYtSNu+HTIkQCDvPQ9thsUnPUS" crossorigin="anonymous"&gt;&lt;/script&gt;<!--
+--></code></pre>
+
+        <h2>jQuery</h2>
+        <p class="lead">The CUL Toolkit uses jQuery internally, but doesn't make it available for your website. If you site needs jQuery, you'll have to include it yourself. You can get it from the jQuery CDN:</p>
+
+<pre class="border p-4 language-html" data-lang="html"><code><!--
+-->&lt;!-- jQuery 3.4.1 --&gt;
 &lt;script src="https://code.jquery.com/jquery-3.4.1.min.js"&gt;&lt;/script&gt;<!--
 --></code></pre>
 
-        <p class="lead">View the toolkit in action!</p>
-        <p class="border p-2">Check out the <a href="./home.html">Home Page Demo</a>.</p>
+        <h2>Example Pages</h2>
+        <p class="lead">Below you'll find some examples pages that show the toolkit in action.</p>
+        <div class="border p-2">
+          <ul class="mb-0">
+            <li><a href="./home.html">Example Home Page</a></li>
+            <li>More examples to come!</li>
+          </ul>
+        </div>
       </div>
 
       <!-- fat-footer -->
@@ -236,6 +251,9 @@
       </div>
     </footer>
 
+    <!-- CUL Toolkit -->
     <script src="js/cul-toolkit.js"></script>
+    <!-- FontAwesome -->
+    <script defer src="https://cdn.cul.columbia.edu/fontawesome/pro/v5.x/js/all.js" crossorigin="anonymous"></script>
   </body>
 </html>

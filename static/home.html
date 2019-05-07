@@ -8,11 +8,8 @@
     <meta name="Description" content="Columbia University Libraries is a top-tier academic research library, serving one of the world's most important centers of research and learning.">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Toolkit -->
+    <!-- CUL Toolkit -->
     <link rel="stylesheet" type="text/css" href="css/cul-toolkit.css" />
-
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
 
     <!-- Home Page Specific Styles -->
     <style>
@@ -28,7 +25,8 @@
       text-decoration: none;
       color:var(--primary);
     }
-    #i-want-to i {
+    #i-want-to i,
+    #i-want-to svg {
       font-size: 4.75rem;
       color:var(--icon-grey-color);
       -moz-transition: -moz-transform .2s;
@@ -36,7 +34,8 @@
       -webkit-transition: -webkit-transform .2s;
       transition: transform .2s;
     }
-    #i-want-to a:hover i {
+    #i-want-to a:hover i,
+    #i-want-to a:hover svg {
       color:var(--a-link-color);
       -webkit-transform: scale(1.2);
       -moz-transform: scale(1.2);
@@ -801,6 +800,9 @@
       </div>
     </footer>
 
+    <!-- CUL Toolkit -->
     <script src="js/cul-toolkit.js"></script>
+    <!-- FontAwesome -->
+    <script defer src="https://cdn.cul.columbia.edu/fontawesome/pro/v5.x/js/all.js" crossorigin="anonymous"></script>
   </body>
 </html>

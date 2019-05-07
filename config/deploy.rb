@@ -1,3 +1,5 @@
+require 'rainbow'
+
 lock "3.9.1"
 
 set :department, 'cul'
@@ -11,7 +13,7 @@ set :keep_releases, 2
 set :v3_docroot, '/wcm-local/cul-toolkit/html/v3'
 
 before 'deploy:starting', :create_tmp_dir
-before 'deploy:starting', :confirm_build
+before 'deploy:starting', :ensure_deployment_dependencies
 after 'deploy:finished', :symlink_v3
 
 desc 'create tmp directory'
@@ -21,11 +23,12 @@ task :create_tmp_dir do
   end
 end
 
-desc 'confirm that the build task has been run'
-task :confirm_build do
-  ask(:ok, "ok")
-  puts "Don't forget to build the latest version of the code base before deploying!"
-  puts fetch(:ok)
+desc 'confirm that pre-deployment steps have been run'
+task :ensure_deployment_dependencies do
+  unless enter_y_to_continue(Rainbow('Have you already run yarn build, committed the built dist directory, and pushed your changes?').blue.bright)
+    puts 'Cancelled because neither "y" nor "yes" were entered.'
+    exit
+  end
 end
 
 desc 'symlink v3'
@@ -35,6 +38,10 @@ task :symlink_v3 do
   end
 end
 
-task :build do
-  exec 'yarn build'
+def self.enter_y_to_continue(prompt)
+  puts prompt
+  set :confirmation_value, ask('"y" or "yes" to continue (or any other value to cancel)')
+  entered_y = ['y', 'yes'].include?(fetch(:confirmation_value))
+  delete :confirmation_value
+  entered_y
 end

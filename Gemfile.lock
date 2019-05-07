@@ -19,6 +19,7 @@ GEM
     net-scp (2.0.0)
       net-ssh (>= 2.6.5, < 6.0.0)
     net-ssh (5.2.0)
+    rainbow (3.0.0)
     rake (12.3.2)
     sshkit (1.18.2)
       net-scp (>= 1.1.2)
@@ -30,6 +31,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano (~> 3.9.1)
   capistrano-cul (= 0.1.1)
+  rainbow (~> 3.0)
 
 BUNDLED WITH
    2.0.1
