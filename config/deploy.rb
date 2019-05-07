@@ -29,6 +29,21 @@ task :ensure_deployment_dependencies do
     puts 'Cancelled because neither "y" nor "yes" were entered.'
     exit
   end
+
+  ver = JSON.parse(IO.read(File.join(File.dirname(__FILE__), '../package.json')))['version']
+  current_version_tag = "v#{ver}"
+  tags = `git tag --list`.split("\n")
+
+  unless tags.include?(current_version_tag)
+    puts Rainbow("\nWarning: Current package.json version tag #{current_version_tag} was not found among git tags.\n").yellow.bright
+
+    if enter_y_to_continue(Rainbow("Do you want to create a tag for #{current_version_tag}?").blue.bright)
+      run_locally do
+        execute :git, 'tag', current_version_tag
+        execute :git, 'push', '--tags'
+      end
+    end
+  end
 end
 
 desc 'symlink v3'
