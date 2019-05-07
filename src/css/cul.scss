@@ -1,0 +1,64 @@
+.abraham {
+  font-weight: bold;
+  .lincoln {
+    color: red;
+  }
+}
+
+:root {
+   --a-link-color: #2c6bac;
+   --a-visited-color: #769ac5;
+   --nav-a-link-color: #3a6fa2;
+   --icon-grey-color: #595959;
+   --nav-tabs-link-active-color: #f8f9fa;
+   --text-shadow-color: 1px 1px 1px rgba(0,0,0,0.5);
+   --cul-darkblue-color: #093552;
+}
+a:link {
+ color:var(--a-link-color);
+}
+a:visited {
+  color:var(--a-link-color);
+}
+#header a {
+  text-decoration: none;
+}
+@media (min-width: 576px) {
+  #global-menu {
+    font-size: 80%;
+  }
+}
+#site-name {
+  display: block;
+  padding: 1rem 0;
+  margin-bottom: 0;
+}
+#site-name img {
+  width:100vw;
+  height:auto;
+}
+#main-menu a:link {
+  color:var(--nav-a-link-color);
+}
+#main-menu a:visited {
+  color:var(--nav-a-link-color);
+}
+.jumbotron {
+  border-radius: 0;
+}
+
+/* #fat-footer */
+#fat-footer {
+  background-color:var(--cul-darkblue-color);
+  font-size: .75rem;
+}
+.fatf-icon i {
+  font-size: 1.5rem;
+}
+/* /#fat-footer */
+
+/* misc */
+.bg-CULDarkBlue {
+  background-color: var(--cul-darkblue-color);
+}
+/* /misc */
