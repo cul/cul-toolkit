@@ -1,4 +1,8 @@
+# Ignore node modules
 /node_modules
+
+# Ignore capistrano log directory
+/log
 
 # Ignore editor files
 *~
