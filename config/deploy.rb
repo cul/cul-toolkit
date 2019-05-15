@@ -25,7 +25,13 @@ end
 
 desc 'confirm that pre-deployment steps have been run'
 task :ensure_deployment_dependencies do
-  unless enter_y_to_continue(Rainbow('Have you already run yarn build, committed the built dist directory, and pushed your changes?').blue.bright)
+  unless enter_y_to_continue(
+    Rainbow("\nHave you already...\n\n").blue.bright +
+    Rainbow("- Run yarn build ?\n").blue.bright +
+    Rainbow("- (Optionally) updated the package.json version (if you want to create a versioned release) ?\n").orange.bright +
+    Rainbow("- Committed the rebuilt dist directory").blue.bright + Rainbow(" (and optionally, updated package.json)").orange.bright + Rainbow(" ?\n").blue.bright +
+    Rainbow("- Pushed your commit ?\n").blue.bright
+  )
     puts 'Cancelled because neither "y" nor "yes" were entered.'
     exit
   end
@@ -35,9 +41,9 @@ task :ensure_deployment_dependencies do
   tags = `git tag --list`.split("\n")
 
   unless tags.include?(current_version_tag)
-    puts Rainbow("\nWarning: Current package.json version tag #{current_version_tag} was not found among git tags.\n").yellow.bright
+    puts Rainbow("\nWarning: Current package.json version tag #{current_version_tag} was not found among existing git tags.\n").yellow.bright
 
-    if enter_y_to_continue(Rainbow("Do you want to create a tag for #{current_version_tag}?").blue.bright)
+    if enter_y_to_continue(Rainbow("Do you want to create and push a new tag? #{current_version_tag}\n").blue.bright)
       run_locally do
         execute :git, 'tag', current_version_tag
         execute :git, 'push', '--tags'
