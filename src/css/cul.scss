@@ -20,8 +20,13 @@ a:link {
 a:visited {
   color:var(--a-link-color);
 }
-#header a {
-  text-decoration: none;
+#header {
+  .navbar-brand .img-fluid {
+    min-height: 18px;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 @media (min-width: 576px) {
   #global-menu {
@@ -32,10 +37,10 @@ a:visited {
   display: block;
   padding: 1rem 0;
   margin-bottom: 0;
-}
-#site-name img {
-  width:100vw;
-  height:auto;
+  img {
+    width:100vw;
+    height:auto;
+  }
 }
 #main-menu a:link {
   color:var(--nav-a-link-color);
@@ -46,6 +51,21 @@ a:visited {
 .jumbotron {
   border-radius: 0;
 }
+
+/* full-width dropdown menu */
+#main-menu .nav-item.show > a {
+  color:var(--secondary);
+}
+.cul-cols {
+  column-width: 18em;
+  column-gap: 2em;
+  column-rule: 1px solid #e3e3e3;
+  a {
+    break-inside: avoid;
+    white-space: normal;
+  }
+}
+/* /full-width dropdown menu */
 
 /* #fat-footer */
 #fat-footer {
