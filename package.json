@@ -42,9 +42,11 @@
     "popper.js": "^1.15.0"
   },
   "comments": {
-    "tar": "There was a vulnerability in the tar package which was fixed in tar >=4.4.2, so we're forcing yarn to resolve this dependency. The resolutions key is a yarn-specific feature."
+    "tar": "There was a vulnerability in the tar package which was fixed in tar >=4.4.2, so we're forcing yarn to resolve this dependency. The resolutions key is a yarn-specific feature.",
+    "fstream": "There was a vulnerability in the fstream package which was fixed in fstream >=1.0.12, so we're forcing yarn to resolve this dependency. The resolutions key is a yarn-specific feature."
   },
   "resolutions": {
-    "tar": ">=4.4.8"
+    "tar": ">=4.4.8",
+    "fstream": ">=1.0.12"
   }
 }
