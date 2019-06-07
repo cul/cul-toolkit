@@ -1,6 +1,6 @@
 require 'rainbow'
 
-lock "3.9.1"
+lock "3.11.0"
 
 set :department, 'cul'
 set :application, 'toolkit'
