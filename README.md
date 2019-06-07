@@ -20,7 +20,7 @@ yarn start
 
 ## Deployment requirements
 ```
-ruby >= 2.4
+ruby >= 2.5.3 (we currently have a .ruby-version file requiring 2.5.3)
 bundler
 ```
 
