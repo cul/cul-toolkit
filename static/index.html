@@ -128,13 +128,17 @@
 
     <main role="main">
       <div id="top-solid-divider"></div>
-      <div class="container my-5">
+
+      <div class="container my-4">
         <h2 class="mb-2">CUL Toolkit</h2>
         <p class="lead">Include the following in your page to enable toolkit styles and features:</p>
 
 <pre class="border p-4 language-html" data-lang="html"><code><!--
 -->&lt;!-- Toolkit Styles (including Bootstrap 4 CSS) --&gt;
 &lt;link rel="stylesheet" type="text/css" href="https://toolkit.library.columbia.edu/v3/css/cul-toolkit.css" /&gt;
+
+&lt;!-- jQuery (must be included before tookit js!) --&gt;
+&lt;script src="https://code.jquery.com/jquery-3.4.1.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- Toolkit JavaScript (including Bootstrap 4 JS) --&gt;
 &lt;script src="https://toolkit.library.columbia.edu/v3/js/cul-toolkit.js"&gt;&lt;/script&gt;<!--
@@ -152,14 +156,6 @@
 
 &lt;!-- Using the CUL CDN for FontAwesome PRO (assuming you have a Pro license)--&gt;
 &lt;script defer src="https://cdn.cul.columbia.edu/fontawesome/pro/v5.x/js/all.js" integrity="sha384-RLPiEwcAdrH2NjFcwJipJtlFoIN1xvqPYeeDX5yYtSNu+HTIkQCDvPQ9thsUnPUS" crossorigin="anonymous"&gt;&lt;/script&gt;<!--
---></code></pre>
-
-        <h2>jQuery</h2>
-        <p class="lead">The CUL Toolkit uses jQuery internally, but doesn't make it available for your website. If you site needs jQuery, you'll have to include it yourself. You can get it from the jQuery CDN:</p>
-
-<pre class="border p-4 language-html" data-lang="html"><code><!--
--->&lt;!-- jQuery 3.4.1 --&gt;
-&lt;script src="https://code.jquery.com/jquery-3.4.1.min.js"&gt;&lt;/script&gt;<!--
 --></code></pre>
 
         <h2>Example Pages</h2>
@@ -250,6 +246,8 @@
       </div>
     </footer>
 
+    <!-- jQuery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
     <!-- CUL Toolkit -->
     <script src="js/cul-toolkit.js"></script>
     <!-- FontAwesome -->

@@ -58,13 +58,12 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: "css/cul-toolkit.css"
     }),
-    // new HtmlWebpackPlugin({  // Generate index.html in dist folder from template
-    //   filename: 'index.html',
-    //   template: 'src/index.html',
-    //   inject: false //do not automatically inject main js file into copied html file
-    // }),
     new CopyWebpackPlugin([
         { from: 'static', to: '.' },
     ])
-  ]
+  ],
+  externals: {
+    jquery: "jQuery",
+    "$": "jQuery",
+  }
 };
