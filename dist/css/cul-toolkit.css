@@ -7034,7 +7034,7 @@ a.text-dark:hover, a.text-dark:focus {
   --text-shadow-color: 1px 1px 1px rgba(0,0,0,0.5);
   --cul-darkblue-color: #093552; }
 
-a:link {
+a:link:not(.btn) {
   color: var(--a-link-color); }
 
 a:visited:not(.btn) {
