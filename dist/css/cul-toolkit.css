@@ -7037,7 +7037,7 @@ a.text-dark:hover, a.text-dark:focus {
 a:link {
   color: var(--a-link-color); }
 
-a:visited {
+a:visited:not(.btn) {
   color: var(--a-link-color); }
 
 #header .navbar-brand .img-fluid {
