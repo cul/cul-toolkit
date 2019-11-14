@@ -14,7 +14,7 @@ set :v3_docroot, '/wcm-local/cul-toolkit/html/v3'
 
 before 'deploy:starting', :create_tmp_dir
 before 'deploy:starting', :ensure_deployment_dependencies
-after 'deploy:finished', :symlink_v3
+after 'deploy:finished', :build_dist, :symlink_v3
 
 desc 'create tmp directory'
 task :create_tmp_dir do
@@ -27,9 +27,7 @@ desc 'confirm that pre-deployment steps have been run'
 task :ensure_deployment_dependencies do
   unless enter_y_to_continue(
     Rainbow("\nHave you already...\n\n").blue.bright +
-    Rainbow("- Run yarn build ?\n").blue.bright +
     Rainbow("- (Optionally) updated the package.json version (if you want to create a versioned release) ?\n").orange.bright +
-    Rainbow("- Committed the rebuilt dist directory").blue.bright + Rainbow(" (and optionally, updated package.json)").orange.bright + Rainbow(" ?\n").blue.bright +
     Rainbow("- Pushed your commit ?\n").blue.bright
   )
     puts 'Cancelled because neither "y" nor "yes" were entered.'
@@ -48,6 +46,16 @@ task :ensure_deployment_dependencies do
         execute :git, 'tag', current_version_tag
         execute :git, 'push', '--tags'
       end
+    end
+  end
+end
+
+desc 'run yarn build to create the dist directory'
+task :build_dist do
+  on roles(:web) do
+    within release_path do
+      execute :yarn, 'install'
+      execute :yarn, 'build'
     end
   end
 end

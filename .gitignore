@@ -10,3 +10,9 @@
 
 # Ignore OS files
 .DS_Store
+
+# Ignore top level package-lock.json because we're using yarn
+/package-lock.json
+
+# Ignore dist dir because we want to build it upon deployment rather than keeping it in the repo
+/dist
