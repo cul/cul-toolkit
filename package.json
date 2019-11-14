@@ -1,6 +1,6 @@
 {
   "name": "cul-toolkit",
-  "version": "3.0.0-dev.8",
+  "version": "3.0.0-dev.9",
   "description": "Shared styles, JavaScript, and assets for CUL sites.",
   "private": true,
   "main": "index.js",
