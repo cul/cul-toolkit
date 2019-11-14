@@ -14,7 +14,8 @@ set :v3_docroot, '/wcm-local/cul-toolkit/html/v3'
 
 before 'deploy:starting', :create_tmp_dir
 before 'deploy:starting', :ensure_deployment_dependencies
-after 'deploy:finished', :build_dist, :symlink_v3
+before 'deploy:symlink:release', :build_dist
+after 'deploy:symlink:release', :symlink_v3
 
 desc 'create tmp directory'
 task :create_tmp_dir do
