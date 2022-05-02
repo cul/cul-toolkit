@@ -53,7 +53,11 @@ end
 
 desc 'run yarn build to create the dist directory'
 task :build_dist do
-  on roles(:web) do
+  # Note that the yarn tasks below are run in sequence rather than in parallel!
+  # This is necessary because in our test and prod environments we deploy simultaneously to two
+  # load-balanced hosts with a shared, network-mounted user home directory, and the yarn commands
+  # generally fail when running at the same time in this scenario if they're run in parallel.
+  on roles(:web), in: :sequence do
     within release_path do
       execute :yarn, 'install'
       execute :yarn, 'build'
