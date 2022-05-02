@@ -40,7 +40,7 @@
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
-    "tar": ">=4.4.8"
+    "tar": ">=5.0.10"
   },
   "comments": {
     "tar": "There was a vulnerability in the tar package which was fixed in tar >=4.4.2, so we're forcing yarn to resolve this dependency. The resolutions key is a yarn-specific feature.",
