@@ -59,7 +59,7 @@ task :build_dist do
   # generally fail when running at the same time in this scenario if they're run in parallel.
   on roles(:web), in: :sequence do
     within release_path do
-      execute :yarn, 'install'
+      execute :yarn, 'install --ignore-engines'
       execute :yarn, 'build'
     end
   end
