@@ -1,8 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const  CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -11,7 +11,9 @@ module.exports = {
       maxAssetSize: 512000
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    static: {
+		directory: path.resolve(__dirname, 'dist')
+	},
     compress: true,
     port: 3000
   },
@@ -58,9 +60,13 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: "css/cul-toolkit.css"
     }),
-    new CopyWebpackPlugin([
-        { from: 'static', to: '.' },
-    ])
+    new CopyWebpackPlugin(
+		{
+			patterns: [
+				{ from: 'static', to: '.' },
+			]
+		}
+	)
   ],
   externals: {
     jquery: "jQuery",
