@@ -1,16 +1,16 @@
 require 'rainbow'
 
-lock "3.11.0"
+lock '~> 3.18.0'
 
 set :department, 'cul'
 set :application, 'toolkit'
 set :remote_user, "culwcm"
 set :repo_url, "git@github.com:cul/#{fetch(:department)}-#{fetch(:application)}.git"
-set :deploy_to, "/wcm-local/cul-toolkit/deployments/v3"
+set :deploy_to, "/app/wcm2-local/cul-toolkit/deployments/v3"
 set :ssh_options, { :forward_agent => true }
 set :keep_releases, 2
 
-set :v3_docroot, '/wcm-local/cul-toolkit/html/v3'
+set :v3_docroot, '/app/wcm2-local/cul-toolkit/html/v3'
 
 before 'deploy:starting', :create_tmp_dir
 before 'deploy:starting', :ensure_deployment_dependencies
