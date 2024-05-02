@@ -39,7 +39,7 @@ set :nvm_node_version, "cul_toolkit_#{fetch(:stage)}" # This NVM alias must exis
 end
 
 # Default value for default_env is {}
-set :default_env, NODE_ENV: 'production'
+set :default_env, NODE_ENV: 'development' # We deploy in development mode because the build occurs on the server
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
