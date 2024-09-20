@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- BS5 and Vite! -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CUL Toolkit</title>
+	<meta name="Description" content="Columbia University Libraries is a top-tier academic research library, serving one of the world's most important centers of research and learning.">
+	<link rel="shortcut icon" href="favicon.ico">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+	    window.CUL = window.CUL || {};
+	</script>
+	<script type="module" src="./js/main.js"></script>
+	<style>
+		.tt-menu { position: static !important; padding: 1em 0.5em; background-color: var(--bs-primary-bg-subtle); word-wrap: break-word; border-bottom: 1px solid #ccc; }
+		.twitter-typeahead { width: 100%; }
+		input[type="search"]::-webkit-search-decoration,
+		input[type="search"]::-webkit-search-cancel-button,
+		input[type="search"]::-webkit-search-results-button,
+		input[type="search"]::-webkit-search-results-decoration {
+		  -webkit-appearance:none;
+		}
+	</style>
+  </head>
+  <body>
+	<script>0</script>
+	<nav class="navbar sticky-top navbar-expand bg-body border-bottom">
+	  <div class="container">
+		<div id="CULnavbar" class="flex-grow-1">
+		  <a href="/" class="navbar-brand">
+			<img id="CULbrand" class="img-fluid" src="./assets/cul-text-logo.svg" alt="Columbia University Libraries">
+		  </a>
+		</div>
+		<nav id="global-menu" class="navbar d-none d-lg-flex">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link text-secondary" href="https://resolver.library.columbia.edu/lweb0087">My Library Account</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-secondary" href="https://hours.library.columbia.edu/">Hours</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-secondary" href="/services/askalibrarian.html">Ask a Librarian</a>
+				</li>
+			</ul>
+		</nav>
+		<button type="button" class="btn btn-link text-secondary px-1" aria-label="Table of Contents Sidebar" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"><span class="fa-light fa-sidebar-flip"></span></button>
+	  </div>
+	</nav>
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+	    <div class="offcanvas-header">
+			<img class="me-2" style="max-height:1.3em;" src="./assets/columbia_crown_logo-square-135x135.svg" alt="Columbia University Libraries"> 
+			<h5 class="offcanvas-title" id="offcanvasExampleLabel">Table of CULontents</h5>
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	    </div>
+	    <div class="offcanvas-body">
+			<!--
+	        <form class="d-flex mb-2" role="search">
+	            <input class="form-control me-2 border-primary" type="search" placeholder="Search" aria-label="Search">
+	            <button class="btn btn-outline-primary" type="submit">Search</button>
+	        </form>
+			-->
+			<div id="hero-search"> 
+				<form id="hero-search-form" class="d-flex mb-2 justify-content-between" role="search" method="get" action="https://clio.columbia.edu/quicksearch">
+						 <input required class="form-control border-primary tt-input" type="search" aria-label="Search CLIO & the Libraries" placeholder="Search CLIO & the Libraries Website" name="q" id="quicksearch" autofocus>
+						<div style="position:absolute;right:1.5em;">
+							<button type="reset" title="Clear the query" class="btn btn-link" aria-label="Clear the query">
+									<i class="fal fa-times"></i>
+							</button>
+						<!--
+							<button class="btn btn-link ps-1" type="submit" aria-label="Submit keywords">
+									<i class="fal fa-search"></i>
+							</button>
+						-->
+						</div>
+				</form>
+            </div>
+			<ul class="list-unstyled">
+				<li class="">
+					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="https://resolver.library.columbia.edu/lweb0087"><span class="far fa-user"></span> My Library Account</a>
+				</li>
+				<li class="">
+					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="https://hours.library.columbia.edu/"><span class="far fa-clock"></span> Hours</a>
+				</li>
+				<li class="">
+					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="/services/askalibrarian.html"><span class="far fa-book-reader"></span> Ask a Librarian</a>
+				</li>
+			</ul>
+
+			<hr>
+
+			<div id="main-menu">
+				<ul class="list-unstyled w-100">
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#services-and-tools-collapse" aria-expanded="false">
+							Services &amp; Tools
+						</button>
+						<div class="collapse" id="services-and-tools-collapse">
+							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+								<li><a class="d-block" href="/services.html">Services &amp; Tools</a></li>
+								<li><a class="d-block" href="/services/faq.html">FAQ</a></li>
+								<li><a class="d-block" href="/using-libraries/alumni.html">For Alumni</a></li>
+								<li><a class="d-block" href="/services/faculty.html">For Faculty</a></li>
+								<li><a class="d-block" href="/services.html#audience=student">For Students</a></li>
+								<li><a class="d-block" href="/using-libraries/visitors.html">For Visitors</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#libraries-collapse" aria-expanded="false">
+							Libraries
+						</button>
+									<div class="collapse" id="libraries-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/libraries.html">Libraries &amp; Affiliates</a></li>
+											<li><a class="d-block" href="/libraries/avery.html">Avery Architectural &amp; Fine Arts Library</a></li>
+											<li><a class="d-block" href="/libraries/burke.html">Burke Library at Union Theological Seminary</a></li>
+											<li><a class="d-block" href="/libraries/business.html">Business &amp; Economics Library in Uris</a></li>
+											<li><a class="d-block" href="/libraries/business-manhattanville.html">Business Library at Manhattanville</a></li>
+											<li><a class="d-block" href="/libraries/butler.html">Butler Library</a></li>
+											<li><a class="d-block" href="/libraries/eastasian.html">C.V. Starr East Asian Library</a></li>
+											<li><a class="d-block" href="/libraries/music.html">Gabe M. Wiener Music &amp; Arts Library</a></li>
+											<li><a class="d-block" href="https://library.cumc.columbia.edu/">Health Sciences Library</a></li>
+											<li><a class="d-block" href="/libraries/journalism.html">Journalism Library</a></li>
+											<li><a class="d-block" href="http://www.law.columbia.edu/library/">Law Library</a></li>
+											<li><a class="d-block" href="/libraries/lehman.html">Lehman Social Sciences Library</a></li>
+											<li><a class="d-block" href="/libraries/math.html">Mathematics Library</a></li>
+											<li><a class="d-block" href="/libraries/undergraduate.html">Milstein Undergraduate Library</a></li>
+											<li><a class="d-block" href="/libraries/rbml.html">Rare Book &amp; Manuscript Library</a></li>
+											<li><a class="d-block" href="/libraries/science-engineering.html">Science &amp; Engineering Library</a></li>
+											<li><a class="d-block" href="/libraries/social-work.html">Social Work Library</a></li>
+										</ul>
+									</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collections-collapse" aria-expanded="false">
+							Collections
+						</button>
+									<div class="collapse" id="collections-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/collections.html">About Our Collections</a></li>
+											<li><a class="d-block" href="https://academiccommons.columbia.edu/">Academic Commons</a></li>
+											<li><a class="d-block" href="/collections/archives-portal.html">Archival Collections</a></li>
+											<li><a class="d-block" href="https://resolver.library.columbia.edu/clio">CLIO: Columbia Libraries Catalog</a></li>
+											<li><a class="d-block" href="/collections/digital-collections.html">Digital Collections &amp; Exhibitions</a></li>
+											<li><a class="d-block" href="/collections/eresources.html">E-Resources</a></li>
+											<li><a class="d-block" href="/collections/oral-history-portal.html">Oral History Collections</a></li>
+											<li><a class="d-block" href="https://resolver.library.columbia.edu/lweb0004">Recommend a Title for Purchase</a></li>
+											<li><a class="d-block" href="/about/staff/subject-specialists-by-subject.html">Subject Specialists</a></li>
+										</ul>
+									</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#using-collapse" aria-expanded="false">
+							Using the Libraries
+						</button>
+									<div class="collapse" id="using-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/using-libraries.html">Using the Libraries</a></li>
+											<li><a class="d-block" href="/using-libraries/access-privileges.html">Access Privileges</a></li>
+											<li><a class="d-block" href="/using-libraries/disability.html">Accessibility</a></li>
+											<li><a class="d-block" href="/using-libraries/borrowing.html">Borrow, Request, Renew</a></li>
+											<li><a class="d-block" href="/services/reserves.html">Course Reserves</a></li>
+											<li><a class="d-block" href="https://hours.library.columbia.edu/">Hours</a></li>
+											<li><a class="d-block" href="/using-libraries/printing.html">Print, Scan, Digitize</a></li>
+											<li><a class="d-block" href="/using-libraries/workshops.html">Workshops and Training</a></li>
+										</ul>
+									</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#research-and-teaching-collapse" aria-expanded="false">
+							Research &amp; Teaching
+						</button>
+									<div class="collapse" id="research-and-teaching-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/research-teaching.html">Research &amp; Teaching</a></li>
+											<li><a class="d-block" href="https://copyright.columbia.edu/index.html">Copyright Advisory Services</a></li>
+											<li><a class="d-block" href="/services/digital-scholarship.html">Digital Scholarship</a></li>
+											<li><a class="d-block" href="/research-teaching/getting-started.html">Getting Started with the Libraries</a></li>
+											<li><a class="d-block" href="/services/research-data-services.html">Research Data Services</a></li>
+											<li><a class="d-block" href="/services/subject-guides.html">Subject &amp; Course Guides</a></li>
+											<li><a class="d-block" href="/research-teaching/workshops.html">Workshops &amp; Training</a></li>
+										</ul>
+									</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#about-collapse" aria-expanded="false">
+							About
+						</button>
+									<div class="collapse" id="about-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/about.html">About the Libraries</a></li>
+											<li><a class="d-block" href="/about/jobs-internships.html">Jobs &amp; Internships</a></li>
+											<li><a class="d-block" href="/about/news/alert.html">Library Status Updates</a></li>
+											<li><a class="d-block" href="/about/news.html">News</a></li>
+											<li><a class="d-block" href="/about/values.html">Our Values &amp; Commitment in Action</a></li>
+											<li><a class="d-block" href="/about/staff.html">Staff</a></li>
+											<li><a class="d-block" href="https://strategicdirections.library.columbia.edu/">Strategic Directions</a></li>
+											<li><a class="d-block" href="/about/student_advisory_committee.html">Student Library Advisory Committee</a></li>
+										</ul>
+									</div>
+					</li>
+				</ul>
+			</div>
+
+			<p>
+				Some paragraph text as placeholder. In real life we can have the elements you have chosen. Like, text, images, lists, etc.
+			</p>
+
+
+	    </div>
+	</div>
+
+	<div class="container col-xxl-8 px-4 py-2">
+		<div class="row flex-lg-row-reverse justify-content-center align-items-center g-5 py-5">
+		  <div class="col-10 col-sm-8 col-lg-6">
+			<!--img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"-->
+			<img class="d-block mx-lg-auto img-fluid" width="360" height="360" loading="lazy" src="./assets/columbia_crown_logo-square-135x135.svg" alt="Columbia University Libraries"> 
+		  </div>
+		  <div class="col-lg-6">
+			<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">cul-toolkit v5 with Bootstrap 5 &amp; Vite!</h1>
+			<p class="lead"><code>cul-toolkit</code> is a CUL-themed customization and extension of the Bootstrap 5 frontend framework for use with all official CUL web properties.</p>
+			<p>Watch this space (and our <a href="https://github.com/cul/cul-toolkit">Github</a> repository for more updates, examples, and documentation on implementing <code>cul-toolkit</code>, branding, assets, widgets, and <code>quicksearch</code> into your official CUL web project.</p>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+				<button type="button" class="btn btn-primary btn-md px-4 me-md-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">CUL Menu!</button>
+                <a href="examples/index.html" class="btn btn-info text-white btn-md px-4 me-md-2">Examples! <i class="fa-duotone fa-solid fa-chevrons-right fa-beat"></i></a>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+	<script src="./js/typeahead-0.11.1.bundle.min.js"></script>
+	<script src="./js/quicksearch.js"></script>
+
+	<!-- FontAwesome 6 -->
+	<script id="fa-script" async src="https://kit.fontawesome.com/b5775b608d.js" crossorigin="anonymous"></script>
+	<script>
+	    document.getElementById('fa-script').onerror = function () {
+	        var scriptElement=document.createElement('script');
+	        scriptElement.type = 'text/javascript';
+	        scriptElement.src = "https://cdn.cul.columbia.edu/fontawesome/pro/v6.x/js/all.js";
+	        document.body.appendChild(scriptElement);
+	    }
+	</script>
+
+  </body>
+</html>
+

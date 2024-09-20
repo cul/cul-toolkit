@@ -20,13 +20,16 @@ a:link:not(.btn) {
 a:visited:not(.btn) {
   color:var(--a-link-color);
 }
-#header {
+#CULnavbar,#header {
   .navbar-brand .img-fluid {
-    min-height: 18px;
+    min-height: 1em;
   }
   a {
     text-decoration: none;
   }
+}
+#CULbrand {
+	max-width:400px;
 }
 @media (min-width: 576px) {
   #global-menu {

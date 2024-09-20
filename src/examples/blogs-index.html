@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- BS5 and Vite! -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CUL Toolkit</title>
+	<meta name="Description" content="Columbia University Libraries is a top-tier academic research library, serving one of the world's most important centers of research and learning.">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+	    window.CUL = window.CUL || {};
+	</script>
+	<style>
+		.tt-menu { position: static !important; padding: 1em 0.5em; background-color: var(--bs-primary-bg-subtle); word-wrap: break-word; border-bottom: 1px solid #ccc; }
+		.twitter-typeahead { width: 100%; }
+		input[type="search"]::-webkit-search-decoration,
+		input[type="search"]::-webkit-search-cancel-button,
+		input[type="search"]::-webkit-search-results-button,
+		input[type="search"]::-webkit-search-results-decoration {
+		  -webkit-appearance:none;
+		}
+		.subsiteCard .card-body {
+		  justify-content: space-between;
+			a {
+				border-bottom: none !important;
+				text-decoration: none !important;
+			}
+		}
+		.subsiteCard .card-img-top {
+		  width: 100%;
+		  height: 15vw;
+		  object-fit: cover;
+		}
+		.subsiteCard a:hover {
+		  text-decoration:none;
+		}
+		.subsiteCard h3:hover {
+		  text-decoration:underline!important;
+		}
+		.subsiteCard .fa-rss:hover {
+		  color:var(--success);
+		}
+
+		.stretched-link {
+		  &::after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			// Just in case `pointer-events: none` is set on a parent
+			pointer-events: auto;
+			content: "";
+			// IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
+			background-color: rgba(0, 0, 0, 0);
+		  }
+		}
+
+	</style>
+	<script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+	<script>0</script>
+	<nav class="navbar sticky-top navbar-expand bg-body border-bottom">
+	  <div class="container">
+		<div id="CULnavbar" class="flex-grow-1">
+		  <a href="/" class="navbar-brand">
+			<img id="CULbrand" class="img-fluid" src="../assets/cul-text-logo.svg" alt="Columbia University Libraries">
+		  </a>
+		</div>
+		<nav id="global-menu" class="navbar d-none d-lg-flex">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link text-secondary" href="https://resolver.library.columbia.edu/lweb0087">My Library Account</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-secondary" href="https://hours.library.columbia.edu/">Hours</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-secondary" href="/services/askalibrarian.html">Ask a Librarian</a>
+				</li>
+			</ul>
+		</nav>
+		<button type="button" class="btn btn-link text-secondary px-1" aria-label="Table of Contents Sidebar" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"><span class="fa-light fa-sidebar-flip"></span></button>
+	  </div>
+	</nav>
+<nav class="navbar navbar-expand-md navbar-light bg-light py-0" style="min-height: 140px;
+    background-image: url(https://blogs.cul.columbia.edu/wp-content/themes/cul-2019/img/LowFacade.EileenBarroso.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: rgb(108, 117, 125) !important;
+    background-position: center 70%;">
+	<div class="container">
+		<h1 class="display-4 mb-0 p-0 py-4 w-100 text-center text-md-left"><a rel="home" class="text-white text-decoration-none" href="https://blogs.cul.columbia.edu/" title="Columbia University Libraries Blogs" itemprop="url">Columbia University Libraries Blogs</a></h1>
+	</div>
+</nav>
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+	    <div class="offcanvas-header">
+			<img class="me-2" style="max-height:1.3em;" src="../assets/columbia_crown_logo-square-135x135.svg" alt="Columbia University Libraries"> 
+			<h5 class="offcanvas-title" id="offcanvasExampleLabel">Table of CULontents</h5>
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	    </div>
+	    <div class="offcanvas-body">
+			<div id="hero-search"> 
+				<form id="hero-search-form" class="d-flex mb-2 justify-content-between" role="search" method="get" action="https://clio.columbia.edu/quicksearch">
+						 <input required class="form-control border-primary tt-input" type="search" aria-label="Search CLIO & the Libraries" placeholder="Search CLIO & the Libraries Website" name="q" id="quicksearch" autofocus>
+						<div style="position:absolute;right:1.5em;">
+							<button type="reset" title="Clear the query" class="btn btn-link" aria-label="Clear the query">
+									<i class="fal fa-times"></i>
+							</button>
+						</div>
+				</form>
+            </div>
+			<ul class="list-unstyled">
+				<li class="">
+					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="https://resolver.library.columbia.edu/lweb0087"><span class="far fa-user"></span> My Library Account</a>
+				</li>
+				<li class="">
+					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="https://hours.library.columbia.edu/"><span class="far fa-clock"></span> Hours</a>
+				</li>
+				<li class="">
+					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="/services/askalibrarian.html"><span class="far fa-book-reader"></span> Ask a Librarian</a>
+				</li>
+			</ul>
+
+			<hr>
+
+			<div id="main-menu">
+				<ul class="list-unstyled w-100">
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#services-and-tools-collapse" aria-expanded="false">
+							Services &amp; Tools
+						</button>
+						<div class="collapse" id="services-and-tools-collapse">
+							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+								<li><a class="d-block" href="/services.html">Services &amp; Tools</a></li>
+								<li><a class="d-block" href="/services/faq.html">FAQ</a></li>
+								<li><a class="d-block" href="/using-libraries/alumni.html">For Alumni</a></li>
+								<li><a class="d-block" href="/services/faculty.html">For Faculty</a></li>
+								<li><a class="d-block" href="/services.html#audience=student">For Students</a></li>
+								<li><a class="d-block" href="/using-libraries/visitors.html">For Visitors</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#libraries-collapse" aria-expanded="false">
+							Libraries
+						</button>
+									<div class="collapse" id="libraries-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/libraries.html">Libraries &amp; Affiliates</a></li>
+											<li><a class="d-block" href="/libraries/avery.html">Avery Architectural &amp; Fine Arts Library</a></li>
+											<li><a class="d-block" href="/libraries/burke.html">Burke Library at Union Theological Seminary</a></li>
+											<li><a class="d-block" href="/libraries/business.html">Business &amp; Economics Library in Uris</a></li>
+											<li><a class="d-block" href="/libraries/business-manhattanville.html">Business Library at Manhattanville</a></li>
+											<li><a class="d-block" href="/libraries/butler.html">Butler Library</a></li>
+											<li><a class="d-block" href="/libraries/eastasian.html">C.V. Starr East Asian Library</a></li>
+											<li><a class="d-block" href="/libraries/music.html">Gabe M. Wiener Music &amp; Arts Library</a></li>
+											<li><a class="d-block" href="https://library.cumc.columbia.edu/">Health Sciences Library</a></li>
+											<li><a class="d-block" href="/libraries/journalism.html">Journalism Library</a></li>
+											<li><a class="d-block" href="http://www.law.columbia.edu/library/">Law Library</a></li>
+											<li><a class="d-block" href="/libraries/lehman.html">Lehman Social Sciences Library</a></li>
+											<li><a class="d-block" href="/libraries/math.html">Mathematics Library</a></li>
+											<li><a class="d-block" href="/libraries/undergraduate.html">Milstein Undergraduate Library</a></li>
+											<li><a class="d-block" href="/libraries/rbml.html">Rare Book &amp; Manuscript Library</a></li>
+											<li><a class="d-block" href="/libraries/science-engineering.html">Science &amp; Engineering Library</a></li>
+											<li><a class="d-block" href="/libraries/social-work.html">Social Work Library</a></li>
+										</ul>
+									</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collections-collapse" aria-expanded="false">
+							Collections
+						</button>
+									<div class="collapse" id="collections-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/collections.html">About Our Collections</a></li>
+											<li><a class="d-block" href="https://academiccommons.columbia.edu/">Academic Commons</a></li>
+											<li><a class="d-block" href="/collections/archives-portal.html">Archival Collections</a></li>
+											<li><a class="d-block" href="https://resolver.library.columbia.edu/clio">CLIO: Columbia Libraries Catalog</a></li>
+											<li><a class="d-block" href="/collections/digital-collections.html">Digital Collections &amp; Exhibitions</a></li>
+											<li><a class="d-block" href="/collections/eresources.html">E-Resources</a></li>
+											<li><a class="d-block" href="/collections/oral-history-portal.html">Oral History Collections</a></li>
+											<li><a class="d-block" href="https://resolver.library.columbia.edu/lweb0004">Recommend a Title for Purchase</a></li>
+											<li><a class="d-block" href="/about/staff/subject-specialists-by-subject.html">Subject Specialists</a></li>
+										</ul>
+									</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#using-collapse" aria-expanded="false">
+							Using the Libraries
+						</button>
+									<div class="collapse" id="using-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/using-libraries.html">Using the Libraries</a></li>
+											<li><a class="d-block" href="/using-libraries/access-privileges.html">Access Privileges</a></li>
+											<li><a class="d-block" href="/using-libraries/disability.html">Accessibility</a></li>
+											<li><a class="d-block" href="/using-libraries/borrowing.html">Borrow, Request, Renew</a></li>
+											<li><a class="d-block" href="/services/reserves.html">Course Reserves</a></li>
+											<li><a class="d-block" href="https://hours.library.columbia.edu/">Hours</a></li>
+											<li><a class="d-block" href="/using-libraries/printing.html">Print, Scan, Digitize</a></li>
+											<li><a class="d-block" href="/using-libraries/workshops.html">Workshops and Training</a></li>
+										</ul>
+									</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#research-and-teaching-collapse" aria-expanded="false">
+							Research &amp; Teaching
+						</button>
+									<div class="collapse" id="research-and-teaching-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/research-teaching.html">Research &amp; Teaching</a></li>
+											<li><a class="d-block" href="https://copyright.columbia.edu/index.html">Copyright Advisory Services</a></li>
+											<li><a class="d-block" href="/services/digital-scholarship.html">Digital Scholarship</a></li>
+											<li><a class="d-block" href="/research-teaching/getting-started.html">Getting Started with the Libraries</a></li>
+											<li><a class="d-block" href="/services/research-data-services.html">Research Data Services</a></li>
+											<li><a class="d-block" href="/services/subject-guides.html">Subject &amp; Course Guides</a></li>
+											<li><a class="d-block" href="/research-teaching/workshops.html">Workshops &amp; Training</a></li>
+										</ul>
+									</div>
+					</li>
+					<li class="mb-1">
+						<button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#about-collapse" aria-expanded="false">
+							About
+						</button>
+									<div class="collapse" id="about-collapse">
+										<ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+											<li><a class="d-block" href="/about.html">About the Libraries</a></li>
+											<li><a class="d-block" href="/about/jobs-internships.html">Jobs &amp; Internships</a></li>
+											<li><a class="d-block" href="/about/news/alert.html">Library Status Updates</a></li>
+											<li><a class="d-block" href="/about/news.html">News</a></li>
+											<li><a class="d-block" href="/about/values.html">Our Values &amp; Commitment in Action</a></li>
+											<li><a class="d-block" href="/about/staff.html">Staff</a></li>
+											<li><a class="d-block" href="https://strategicdirections.library.columbia.edu/">Strategic Directions</a></li>
+											<li><a class="d-block" href="/about/student_advisory_committee.html">Student Library Advisory Committee</a></li>
+										</ul>
+									</div>
+					</li>
+				</ul>
+			</div>
+
+			<p>
+				Some paragraph text as placeholder. In real life we can have the elements you have chosen. Like, text, images, lists, etc.
+			</p>
+
+
+	    </div>
+	</div>
+
+<div class="wrapper " id="full-width-page-wrapper">
+
+	<div class="container" id="content">
+
+		<div class="row">
+
+			<div class="col-md-12 content-area" id="primary">
+
+				<main class="site-main" id="main" role="main">
+
+					
+						
+<article class="post-311 page type-page status-publish hentry" id="post-311">
+
+	<div class="entry-content">
+<h3 id="g_lb" class="h4 mt-3 text-center">Libraries Blogs</h3>
+<div class="row h-100 mt-4 mb-0">    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/spotlights/wp-content/blogs.dir/11/files/Butler-Exterior-2-300x200.jpg" class="card-img-top" alt="Libraries Spotlight BLOG">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/spotlights" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Libraries Spotlight BLOG
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">News, events, workshops, resources, research advice and more!</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/spotlights/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/avery/wp-content/blogs.dir/132/files/2011/04/avery.2010-04-09.DSC_9424-300x199.jpg" class="card-img-top" alt="Avery Library Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/avery" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Avery Library Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">News about collections, services, events and exhibits from Avery Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/avery/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/burke/wp-content/blogs.dir/139/files/2018/02/Union-color-229x300.jpg" class="card-img-top" alt="The Burke Library Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/burke" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                The Burke Library Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">The Burke Library is one of the largest theological libraries in North America.</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/burke/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/butler/wp-content/blogs.dir/115/files/2010/03/columbia.jpg" class="card-img-top" alt="Humanities &amp; History Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/butler" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Humanities &amp; History Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Magna vis veritas</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/butler/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/global-studies/wp-content/blogs.dir/144/files/2013/01/lehman.2010-04-09.DSC_9290-300x199.jpg" class="card-img-top" alt="Global Studies Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/global-studies" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Global Studies Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">News, exhibits, events and services related to our global studies collections</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/global-studies/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/journalism/wp-content/blogs.dir/104/files/2011/03/Screen-shot-2011-03-19-at-5.18.30-PM-188x300.png" class="card-img-top" alt="Journalism Library Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/journalism" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Journalism Library Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">News and research tips from Columbia University's Journalism Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/journalism/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/longview/wp-content/blogs.dir/163/files/2016/08/Remmelin-DSF6213-1-300x232.jpg" class="card-img-top" alt="The Long View">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/longview" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                The Long View
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Preserving and sharing Columbia University Libraries' treasures of the past, present, and future</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/longview/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/music/wp-content/blogs.dir/136/files/2013/10/IndiaMusicWeekExhibition-2-300x224.jpg" class="card-img-top" alt="Music &amp; Arts Library News">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/music" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Music &amp; Arts Library News
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">News, info, events, and selected acquisitions from the Music &amp; Arts Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/music/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/rbml/wp-content/blogs.dir/142/files/2021/02/cropped-Diptych_Dial_RBML-300x233.jpg" class="card-img-top" alt="News from Columbia's Rare Book &amp; Manuscript Library">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/rbml" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                News from Columbia's Rare Book &amp; Manuscript Library
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none"></p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/rbml/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/starr/wp-content/blogs.dir/140/files/2012/08/eastasian.2008-04-16.DSC_1442-300x201.jpg" class="card-img-top" alt="Starr Library Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/starr" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Starr Library Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">News about collections, services, events, exhibits, and more at the C. V. Starr East Asian Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/starr/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/business/wp-content/blogs.dir/100/files/2013/04/DSC_11631-300x199.jpg" class="card-img-top" alt="Watson Library Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/business" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Watson Library Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">News and research tips from the Watson Library of Business and Economics</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/business/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/tsl/wp-content/blogs.dir/171/files/2021/06/image0-3-scaled-e1623705739233-300x300.jpeg" class="card-img-top" alt="Card catalog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/tsl" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Technically Speaking
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Highlighting library technical services, including acquisitions, cataloging, e-resources, interlibrary loan, and binding and shelf preparation.</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/tsl/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/the-tinker/wp-content/blogs.dir/167/files/2022/03/25392405123_32b356955c_c_cropped-300x262.jpg" class="card-img-top" alt="Image courtesy of https://wocintechchat.com/. A person's hands, in profile, at work.">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/the-tinker" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                The Tinker
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">The blog of the Digital Scholarship unit at Columbia University Libraries</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/the-tinker/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/dssc/wp-content/blogs.dir/109/files/2013/12/BLOGS_lehman2-300x225.gif" class="card-img-top" alt="Research Data Services Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/dssc" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Research Data Services Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Providing support for and consultations on the research data needs at Columbia University</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/dssc/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/3dprint/wp-content/blogs.dir/158/files/2016/01/WEBLOGO1-300x300.png" class="card-img-top" alt="3DPrint @ Columbia University">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/3dprint" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                3DPrint @ Columbia University
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">A Columbia University Libraries service</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/3dprint/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div></div>
+<h3 id="g_ascpb" class="h4 mt-3 text-center">Archives &amp; Special Collections Project Blogs</h3>
+<div class="row h-100 my-4">    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/tafelarchive/wp-content/blogs.dir/137/files/2020/08/TAFEL-289x300.jpg" class="card-img-top" alt="About the Edgar A Tafel Archive">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/tafelarchive" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                About the Edgar A Tafel Archive
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Documentation of the processing of the Edgar A. Tafel Archive in Avery Library's Drawings &amp; Archives Department</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/tafelarchive/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/archivingalbertellis/wp-content/blogs.dir/130/files/2011/01/Ellis-Albert-undated-214x300.jpg" class="card-img-top" alt="Archiving Albert Ellis: Psychologist and Creator of Rational Emotive Behavior Therapy">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/archivingalbertellis" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Archiving Albert Ellis: Psychologist and Creator of Rational Emotive Behavior Therapy
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Highlights material from the papers of Albert Ellis at Columbia University's Rare Book &amp; Manuscript Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/archivingalbertellis/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/jewishstudiesatcul/wp-content/blogs.dir/129/files/2020/02/cropped-NEA-Tote-Final-web1-221x300.jpg" class="card-img-top" alt="Jewish Studies @ CUL">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/jewishstudiesatcul" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Jewish Studies @ CUL
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">News from the Norman E. Alexander Library for Jewish Studies at Columbia University</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/jewishstudiesatcul/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/makino/wp-content/blogs.dir/133/files/2011/09/Makino-1-300x207.jpg" class="card-img-top" alt="Makino Collection Blog">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/makino" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Makino Collection Blog
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Archiving East Asian Film Studies at Starr Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/makino/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/schapiro/wp-content/blogs.dir/106/files/2009/10/mss-paris_detail-296x300.jpg" class="card-img-top" alt="On Archiving Schapiro">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/schapiro" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                On Archiving Schapiro
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Sharing milestones reached while processing the Meyer Schapiro Collection at Columbia University's Rare Book &amp; Manuscript Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/schapiro/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/armstrongpapers/wp-content/blogs.dir/120/files/2010/04/armstrong-hp.jpg" class="card-img-top" alt="Major Armstrong: Scientist, Technologist, Philosopher">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/armstrongpapers" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Major Armstrong: Scientist, Technologist, Philosopher
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Highlights material from the collection of E.H. Armstrong at Columbia University's Rare Book &amp; Manuscript Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/armstrongpapers/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/outdoorsculpture/wp-content/blogs.dir/145/files/2014/01/almamater1-300x198.jpg" class="card-img-top" alt="Alma Mater">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/outdoorsculpture" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                Public Outdoor Sculpture at Columbia
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">Documenting historical and current information about the public outdoor sculpture on Columbia's campuses</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/outdoorsculpture/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div>    <div class="subsiteCard col-6 col-md-3 mb-4">
+      <div class="card bg-white border-0 h-100">
+        <img decoding="async" src="https://blogs.cul.columbia.edu/jayprint/wp-content/blogs.dir/112/files/2009/12/jay3-215x300.jpg" class="card-img-top" alt="The Selected Papers of John Jay">
+        <article class="card-body d-flex p-1">
+          <a href="https://blogs.cul.columbia.edu/jayprint" class="d-flex stretched-link">
+            <div class="d-flex align-content-start flex-wrap">
+              <h3 class="card-title pr-1 h5 w-100 text-primary">
+                The Selected Papers of John Jay
+              </h3>
+              <p class="card-text d-none d-md-block text-muted text-decoration-none">A project of the Rare Book and Manuscript Library</p>
+            </div>
+          </a><a href="https://blogs.cul.columbia.edu/jayprint/feed/" style="z-index:1;" aria-label="RSS Feed"><svg class="svg-inline--fa fa-rss" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 32C7.2 32 0 39.2 0 48s7.2 16 16 16c220.9 0 400 179.1 400 400c0 8.8 7.2 16 16 16s16-7.2 16-16C448 225.4 254.6 32 16 32zm0 144c-8.8 0-16 7.2-16 16s7.2 16 16 16c141.4 0 256 114.6 256 256c0 8.8 7.2 16 16 16s16-7.2 16-16c0-159.1-128.9-288-288-288zM32 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 0 416a64 64 0 1 0 128 0z"></path></svg><!-- <i class="fal fa-rss"></i> --></a>
+        </article>
+      </div>
+    </div></div>
+
+		
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+
+		
+	</footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->
+
+						
+					
+				</main><!-- #main -->
+
+			</div><!-- #primary -->
+
+		</div><!-- .row end -->
+
+	</div><!-- #content -->
+
+</div>
+
+
+	<script src="../js/typeahead-0.11.1.bundle.min.js"></script>
+	<script src="../js/quicksearch.js"></script>
+
+	<!-- FontAwesome 6 -->
+	<script id="fa-script" async src="https://kit.fontawesome.com/b5775b608d.js" crossorigin="anonymous"></script>
+	<script>
+	    document.getElementById('fa-script').onerror = function () {
+	        var scriptElement=document.createElement('script');
+	        scriptElement.type = 'text/javascript';
+	        scriptElement.src = "https://cdn.cul.columbia.edu/fontawesome/pro/v6.x/js/all.js";
+	        document.body.appendChild(scriptElement);
+	    }
+	</script>
+
+  </body>
+</html>
+
