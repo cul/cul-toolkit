@@ -2,14 +2,27 @@
 
 ## Development requirements
 ```
-nodejs >= v10.17.0
-yarn >= 1.19.1
+nodejs >= v20
+npm >= 10.2
 ```
 
-## Run Webpack Server for development
-Server runs on http://localhost:3000 and auto-recompiles code when resources change.
+## Vite for development
+Dev server runs on http://localhost:8181 and auto-recompiles code when resources change.
 ```
-yarn start
+npm start
+```
+Preview server runs on http://localhost:4173 and serves the built dist/ dir.
+```
+npm run preview
+```
+
+## Vite Build Instructions
+Vite will bundle code and copy public/ files for distribution into the dist/ dir.
+```
+npm install # run the first time you want to build, or if the package-lock.json file has changed
+```
+```
+npm run build
 ```
 
 ## Deployment requirements
@@ -44,8 +57,3 @@ cap dev deploy # or replace "dev" with "test" or "prod"
 
 Note: In order to deploy, you need to have your public key in the remote server user's authorized_keys file on your dev/test/prod hosts.
 
-## Standalone Build Instructions
-```
-yarn install # run the first time you want to build, or if the package.json/yarn.lock file has changed
-yarn build
-```
