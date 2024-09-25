@@ -1,0 +1,234 @@
+{
+  "Services &amp; Tools": [
+    {
+      "href": "https://library.columbia.edu/services.html",
+      "value": "Services &amp; Tools"
+    },
+    {
+      "href": "https://library.columbia.edu/services/faq.html",
+      "value": "FAQ"
+    },
+    {
+      "href": "https://library.columbia.edu/using-libraries/alumni.html",
+      "value": "For Alumni"
+    },
+    {
+      "href": "https://library.columbia.edu/services/faculty.html",
+      "value": "For Faculty"
+    },
+    {
+      "href": "https://library.columbia.edu/services.html#audience=student",
+      "value": "For Students"
+    },
+    {
+      "href": "https://library.columbia.edu/using-libraries/visitors.html",
+      "value": "For Visitors"
+    }
+  ],
+  "Libraries": [
+    {
+      "href": "https://library.columbia.edu/libraries.html",
+      "value": "Libraries &amp; Affiliates"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/avery.html",
+      "value": "Avery Architectural &amp; Fine Arts Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/burke.html",
+      "value": "Burke Library at Union Theological Seminary"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/business.html",
+      "value": "Business &amp; Economics Library in Uris"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/business-manhattanville.html",
+      "value": "Business Library at Manhattanville"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/butler.html",
+      "value": "Butler Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/eastasian.html",
+      "value": "C.V. Starr East Asian Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/music.html",
+      "value": "Gabe M. Wiener Music &amp; Arts Library"
+    },
+    {
+      "href": "https://library.cumc.columbia.edu/",
+      "value": "Health Sciences Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/journalism.html",
+      "value": "Journalism Library"
+    },
+    {
+      "href": "http://www.law.columbia.edu/library/",
+      "value": "Law Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/lehman.html",
+      "value": "Lehman Social Sciences Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/math.html",
+      "value": "Mathematics Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/undergraduate.html",
+      "value": "Milstein Undergraduate Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/rbml.html",
+      "value": "Rare Book &amp; Manuscript Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/science-engineering.html",
+      "value": "Science &amp; Engineering Library"
+    },
+    {
+      "href": "https://library.columbia.edu/libraries/social-work.html",
+      "value": "Social Work Library"
+    }
+  ],
+  "Collections": [
+    {
+      "href": "https://library.columbia.edu/collections.html",
+      "value": "About Our Collections"
+    },
+    {
+      "href": "https://academiccommons.columbia.edu/",
+      "value": "Academic Commons"
+    },
+    {
+      "href": "https://library.columbia.edu/collections/archives-portal.html",
+      "value": "Archival Collections"
+    },
+    {
+      "href": "https://resolver.library.columbia.edu/clio",
+      "value": "CLIO: Columbia Libraries Catalog"
+    },
+    {
+      "href": "https://library.columbia.edu/collections/digital-collections.html",
+      "value": "Digital Collections &amp; Exhibitions"
+    },
+    {
+      "href": "https://library.columbia.edu/collections/eresources.html",
+      "value": "E-Resources"
+    },
+    {
+      "href": "https://library.columbia.edu/collections/oral-history-portal.html",
+      "value": "Oral History Collections"
+    },
+    {
+      "href": "https://resolver.library.columbia.edu/lweb0004",
+      "value": "Recommend a Title for Purchase"
+    },
+    {
+      "href": "https://library.columbia.edu/about/staff/subject-specialists-by-subject.html",
+      "value": "Subject Specialists"
+    }
+  ],
+  "Using the Libraries": [
+    {
+      "href": "https://library.columbia.edu/using-libraries.html",
+      "value": "Using the Libraries"
+    },
+    {
+      "href": "https://library.columbia.edu/using-libraries/access-privileges.html",
+      "value": "Access Privileges"
+    },
+    {
+      "href": "https://library.columbia.edu/using-libraries/disability.html",
+      "value": "Accessibility"
+    },
+    {
+      "href": "https://library.columbia.edu/using-libraries/borrowing.html",
+      "value": "Borrow, Request, Renew"
+    },
+    {
+      "href": "https://library.columbia.edu/services/reserves.html",
+      "value": "Course Reserves"
+    },
+    {
+      "href": "https://hours.library.columbia.edu/",
+      "value": "Hours"
+    },
+    {
+      "href": "https://library.columbia.edu/using-libraries/printing.html",
+      "value": "Print, Scan, Digitize"
+    },
+    {
+      "href": "https://library.columbia.eduusing-libraries/workshops.html",
+      "value": "Workshops and Training"
+    }
+  ],
+  "Research &amp; Teaching": [
+    {
+      "href": "https://library.columbia.edu/research-teaching.html",
+      "value": "Research &amp; Teaching"
+    },
+    {
+      "href": "https://copyright.columbia.edu/index.html",
+      "value": "Copyright Advisory Services"
+    },
+    {
+      "href": "https://library.columbia.edu/services/digital-scholarship.html",
+      "value": "Digital Scholarship"
+    },
+    {
+      "href": "https://library.columbia.edu/research-teaching/getting-started.html",
+      "value": "Getting Started with the Libraries"
+    },
+    {
+      "href": "https://library.columbia.edu/services/research-data-services.html",
+      "value": "Research Data Services"
+    },
+    {
+      "href": "https://library.columbia.edu/services/subject-guides.html",
+      "value": "Subject &amp; Course Guides"
+    },
+    {
+      "href": "https://library.columbia.edu/research-teaching/workshops.html",
+      "value": "Workshops &amp; Training"
+    }
+  ],
+  "About": [
+    {
+      "href": "https://library.columbia.edu/about.html",
+      "value": "About the Libraries"
+    },
+    {
+      "href": "https://library.columbia.edu/about/jobs-internships.html",
+      "value": "Jobs &amp; Internships"
+    },
+    {
+      "href": "https://library.columbia.edu/about/news/alert.html",
+      "value": "Library Status Updates"
+    },
+    {
+      "href": "https://library.columbia.edu/about/news.html",
+      "value": "News"
+    },
+    {
+      "href": "https://library.columbia.edu/about/values.html",
+      "value": "Our Values &amp; Commitment in Action"
+    },
+    {
+      "href": "https://library.columbia.edu/about/staff.html",
+      "value": "Staff"
+    },
+    {
+      "href": "https://strategicdirections.library.columbia.edu/",
+      "value": "Strategic Directions"
+    },
+    {
+      "href": "https://library.columbia.edu/about/student_advisory_committee.html",
+      "value": "Student Library Advisory Committee"
+    }
+  ]
+}
