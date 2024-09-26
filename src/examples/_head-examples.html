@@ -96,57 +96,8 @@
 				</li>
 			</ul>
 		</nav>
-		<button type="button" class="btn btn-link text-secondary px-1" aria-label="Table of Contents Sidebar" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"><span class="fa-light fa-sidebar-flip"></span></button>
+		<button type="button" class="btn btn-link text-secondary px-1" aria-label="Table of Contents Sidebar" data-bs-toggle="offcanvas" data-bs-target="#CULsidebar"><span class="fa-light fa-sidebar-flip"></span></button>
 	  </div>
 	</nav>
-<nav class="navbar navbar-expand-md navbar-light bg-light py-0" style="min-height: 140px;
-    background-image: url(https://blogs.cul.columbia.edu/wp-content/themes/cul-2019/img/LowFacade.EileenBarroso.jpg);
-    background-size: cover;
-    background-blend-mode: soft-light;
-    background-color: rgb(108, 117, 125) !important;
-    background-position: center 70%;">
-	<div class="container">
-		<h1 class="display-4 mb-0 p-0 py-4 w-100 text-center text-md-left"><a rel="home" class="text-white text-decoration-none" href="https://blogs.cul.columbia.edu/" title="Columbia University Libraries Blogs" itemprop="url">Columbia University Libraries Blogs</a></h1>
-	</div>
-</nav>
-	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-	    <div class="offcanvas-header">
-			<img class="me-2" style="max-height:1.3em;" src="../assets/columbia_crown_logo-square-135x135.svg" alt="Columbia University Libraries"> 
-			<h5 class="offcanvas-title" id="offcanvasExampleLabel">Table of CULontents</h5>
-			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-	    </div>
-	    <div class="offcanvas-body">
-			<div id="hero-search"> 
-				<form id="hero-search-form" class="d-flex mb-2 justify-content-between" role="search" method="get" action="https://clio.columbia.edu/quicksearch">
-						 <input required class="form-control border-primary tt-input" type="search" aria-label="Search CLIO & the Libraries" placeholder="Search CLIO & the Libraries Website" name="q" id="quicksearch" autofocus>
-						<div style="position:absolute;right:1.5em;">
-							<button type="reset" title="Clear the query" class="btn btn-link" aria-label="Clear the query">
-									<i class="fal fa-times"></i>
-							</button>
-						</div>
-				</form>
-            </div>
-			<ul class="list-unstyled">
-				<li class="">
-					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="https://resolver.library.columbia.edu/lweb0087"><span class="far fa-user"></span> My Library Account</a>
-				</li>
-				<li class="">
-					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="https://hours.library.columbia.edu/"><span class="far fa-clock"></span> Hours</a>
-				</li>
-				<li class="">
-					<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="/services/askalibrarian.html"><span class="far fa-book-reader"></span> Ask a Librarian</a>
-				</li>
-			</ul>
-
-			<hr>
-
-			<div id="main-menu">
-			</div>
-
-			<p>
-				Some paragraph text as placeholder. In real life we can have the elements you have chosen. Like, text, images, lists, etc.
-			</p>
-
-	    </div>
-	</div>
-
+	{{> (lookup . 'whichHero') }}
+	{{> _culsidebar }}

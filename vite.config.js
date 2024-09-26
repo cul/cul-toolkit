@@ -1,16 +1,22 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import handlebars from 'vite-plugin-handlebars';
+import culmenu from './src/js/cul-main-menu.json'
 
 const pageData = {
   '/index.html': {
     title: 'cul-toolkit',
+	whichHero: null,
   },
   '/examples/index.html': {
     title: 'cul-toolkit &raquo; examples',
+	whichHero: '_slimhero',
+	heroTitle: 'Columbia University Libraries',
   },
   '/examples/blogs-index.html': {
     title: 'cul-toolkit &raquo; examples &raquo; CUL Blogs Example Landing Page',
+	whichHero: '_slimhero',
+	heroTitle: 'Columbia University Libraries Blogs',
   },
 };
 
@@ -19,14 +25,26 @@ export default defineConfig({
   base: '',
   plugins: [
 	handlebars({
-      //partialDirectory: resolve(__dirname, './partials'),
       partialDirectory: [ 
         resolve(__dirname, 'src','partials'),
         resolve(__dirname, 'src','examples'),
       ],
 	  context(pagePath) {
-		return pageData[pagePath];
+		let pData = pageData[pagePath];
+		pData.culmenu = culmenu;
+		return pData;
 	  },
+      helpers: {
+        lowerdash: (str) => {
+          return str.fn(this).replace(/\s+/g, '-').toLowerCase()
+        },
+      },
+      runtimeOptions: {
+        // config option: define custom private @variables
+        data: {
+			apptitle: 'cul-toolkit',
+        },
+      },
     }),
   ],
   build: {

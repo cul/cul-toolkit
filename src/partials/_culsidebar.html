@@ -1,0 +1,42 @@
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="CULsidebar" aria-labelledby="CULsidebarLabel">
+	    <div class="offcanvas-header">
+			<img class="me-2" style="max-height:1.3em;" src="/assets/columbia_crown_logo-square-135x135.svg" alt="Columbia University Libraries"> 
+			<h5 class="offcanvas-title" id="CULsidebarLabel">Table of CULontents</h5>
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	    </div>
+	    <div class="offcanvas-body">
+			<div id="hero-search"> 
+				<form id="hero-search-form" style="position:relative;" class="d-flex mb-2 justify-content-between" role="search" method="get" action="https://clio.columbia.edu/quicksearch">
+						<input required class="form-control border-primary tt-input" type="search" aria-label="Search CLIO & the Libraries" placeholder="Search CLIO & the Libraries Website" name="q" id="quicksearch" tabindex="0" autofocus>
+						<button style="position:absolute;right:0.3em;" type="reset" title="Clear the query" class="btn btn-link" aria-label="Clear the query">
+								<i class="fal fa-times"></i>
+						</button>
+				</form>
+            </div>
+			<nav>
+				<ul class="list-unstyled">
+					<li class="">
+						<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="https://resolver.library.columbia.edu/lweb0087"><span class="far fa-user"></span> My Library Account</a>
+					</li>
+					<li class="">
+						<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="https://hours.library.columbia.edu/"><span class="far fa-clock"></span> Hours</a>
+					</li>
+					<li class="">
+						<a class="ps-1 btn btn-link text-decoration-none text-secondary" href="/services/askalibrarian.html"><span class="far fa-book-reader"></span> Ask a Librarian</a>
+					</li>
+				</ul>
+			</nav>
+
+			<hr>
+
+			<nav id="main-menu">
+				{{> _culmenu }}
+			</nav>
+
+			<p>
+				Some paragraph text as placeholder. In real life we can have the elements you have chosen. Like, text, images, lists, etc.
+			</p>
+
+	    </div>
+	</div>
+
