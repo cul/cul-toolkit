@@ -1,0 +1,16 @@
+<ul class="list-unstyled w-100">
+{{#each culmenu}}
+<li class="mb-1">
+    <button class="btn btn-toggle ps-0 d-inline-flex w-100 align-items-center rounded border-0 collapsed" data-bs-target="#{{#lowerdash}}{{@key}}{{/lowerdash}}-collapse" data-bs-toggle="collapse" aria-expanded="false">{{{@key}}}</button>
+    {{#each this}}
+        <div id="{{#lowerdash}}{{@../key}}{{/lowerdash}}-collapse" class="collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+                <li>
+                    <a class="d-block" href="{{href}}">{{{value}}}</a>
+                </li>
+            </ul>
+        </div>
+    {{/each}}
+</li>
+{{/each}}
+</ul>
