@@ -6,17 +6,24 @@ import culmenu from './src/js/cul-main-menu.json'
 const pageData = {
   '/index.html': {
     title: 'cul-toolkit',
-	whichHero: null,
   },
   '/examples/index.html': {
     title: 'cul-toolkit &raquo; examples',
 	whichHero: '_slimhero',
+	stylesheet: ['_example-styles.scss'],
 	heroTitle: 'Columbia University Libraries',
   },
   '/examples/blogs-index.html': {
     title: 'cul-toolkit &raquo; examples &raquo; CUL Blogs Example Landing Page',
 	whichHero: '_slimhero',
+	stylesheet: ['_example-styles.scss'],
 	heroTitle: 'Columbia University Libraries Blogs',
+  },
+  '/examples/lweb-home.html': {
+    title: 'cul-toolkit &raquo; examples &raquo; CUL LWeb Example Landing Page',
+	searchHero: true,
+	stylesheet: ['_example-styles.scss', '_lweb-styles.scss'],
+	heroTitle: 'Columbia University Libraries',
   },
 };
 
@@ -55,6 +62,7 @@ export default defineConfig({
         main: resolve(__dirname, 'src/index.html'),
         examples: resolve(__dirname, 'src/examples/index.html'),
         blogIndex: resolve(__dirname, 'src/examples/blogs-index.html'),
+        lwebIndex: resolve(__dirname, 'src/examples/lweb-home.html'),
       },
       output: {
         //entryFileNames: `assets/[name].js`,

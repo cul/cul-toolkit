@@ -1,0 +1,28 @@
+<nav id="main-menu" class="d-none d-lg-flex navbar navbar-expand-lg">
+<div class="container d-flex d-lg-none justify-content-between">
+	<a class="navbar-brand" href="#">Menu</a>
+	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<div class="container">
+			<ul class="list-unstyled flex-row w-100 mb-0">
+			{{#each culmenu}}
+				<li class="nav-item dropdown position-static d-inline-flex">
+					<a href="#" class="nav-link dropdown-toggle my-2 me-3" data-bs-target="#{{#lowerdash}}{{@key}}{{/lowerdash}}-dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{{@key}}}</a>
+					<div id="{{#lowerdash}}{{@./key}}{{/lowerdash}}-dropdown" class="dropdown-menu w-100 border-top-0 border-left-0 border-right-0 rounded-0 pt-0 mt-0">
+						<div class="py-3 bg-secondary text-white">
+							<div class="container cul-cols">
+				{{#each this}}
+								<a class="d-block py-1 text-white dropdown-item bg-secondary" href="{{href}}">{{{value}}}</a>
+				{{/each}}
+							</div>
+						</div>
+					</div>
+				</li>
+			{{/each}}
+			</ul>
+		</div>
+	</div>
+</nav>
