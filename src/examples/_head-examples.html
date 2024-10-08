@@ -11,72 +11,16 @@
 	<script>
 	    window.CUL = window.CUL || {};
 	</script>
-	<style>
-		.tt-menu { position: static !important; padding: 1em 0.5em; background-color: var(--bs-primary-bg-subtle); word-wrap: break-word; border-bottom: 1px solid #ccc; }
-		.twitter-typeahead { width: 100%; }
-		input[type="search"]::-webkit-search-decoration,
-		input[type="search"]::-webkit-search-cancel-button,
-		input[type="search"]::-webkit-search-results-button,
-		input[type="search"]::-webkit-search-results-decoration {
-		  -webkit-appearance:none;
-		}
-		.bigcrown:hover,.list-group-item:hover > .bigcrown {
-		  animation-name: spin;
-		  animation-duration: 5000ms;
-		  animation-iteration-count: infinite;
-		  animation-timing-function: linear; 
-		}
-		@keyframes spin {
-			from {
-				transform:rotate(0deg);
-			}
-			to {
-				transform:rotate(360deg);
-			}
-		}
-		.subsiteCard .card-body {
-		  justify-content: space-between;
-			a {
-				border-bottom: none !important;
-				text-decoration: none !important;
-			}
-		}
-		.subsiteCard .card-img-top {
-		  width: 100%;
-		  height: 15vw;
-		  object-fit: cover;
-		}
-		.subsiteCard a:hover {
-		  text-decoration:none;
-		}
-		.subsiteCard h3:hover {
-		  text-decoration:underline!important;
-		}
-		.subsiteCard .fa-rss:hover {
-		  color:var(--success);
-		}
-
-		.stretched-link {
-		  &::after {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			z-index: 1;
-			// Just in case `pointer-events: none` is set on a parent
-			pointer-events: auto;
-			content: "";
-			// IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
-			background-color: rgba(0, 0, 0, 0);
-		  }
-		}
-	</style>
+    {{#if (lookup . 'stylesheet') }}
+		{{#each this.stylesheet as | sheet|}} 
+			{{> (sheet)}}
+		{{/each}}
+    {{/if}}
 	<script type="module" src="../js/main.js"></script>
   </head>
   <body>
 	<script>0</script>
-	<nav class="navbar sticky-top navbar-expand bg-body border-bottom">
+	<nav id="cultopbar" class="navbar sticky-top navbar-expand bg-body border-bottom">
 	  <div class="container">
 		<div id="CULnavbar" class="flex-grow-1">
 		  <a href="/" class="navbar-brand">
@@ -96,8 +40,10 @@
 				</li>
 			</ul>
 		</nav>
-		<button type="button" class="btn btn-link text-secondary px-1" aria-label="Table of Contents Sidebar" data-bs-toggle="offcanvas" data-bs-target="#CULsidebar"><span class="fa-light fa-sidebar-flip"></span></button>
+		<button type="button" id="culsidebarbtn" class="btn btn-link text-secondary px-1 animate roll" aria-label="Table of Contents Sidebar" data-bs-toggle="offcanvas" data-bs-target="#CULsidebar"><span class="fa-light fa-sidebar-flip"></span></button>
 	  </div>
 	</nav>
-	{{> (lookup . 'whichHero') }}
+    {{#if (lookup . 'whichHero') }}
+        {{> (lookup . 'whichHero') }}
+    {{/if}}
 	{{> _culsidebar }}

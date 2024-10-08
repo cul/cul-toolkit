@@ -53,7 +53,7 @@ jQuery(function($){
           queryTokenizer: queryTokenizer
         });
 
-        $('#quicksearch').typeahead({
+        $('[data-id="quicksearch"]').typeahead({
             hint: false,
             highlight: false,
             minLength: 3
@@ -68,14 +68,14 @@ jQuery(function($){
 		});
 
         // Make hero search form visible by removing invisible class
-        $('#hero-search-form').removeClass('invisible');
+        $('[data-id="hero-search-form"]').removeClass('invisible');
 
     }).fail(function (jqXHR, status, error) {
         console.error("Unable to retrieve Bets Bets results for Quicksearch");
     });
 
 	// When keying up and down through best bet suggestions, enter key press will send the user to the selected item url
-    $('#quicksearch').on('keydown', function(e) {
+    $('[data-id="quicksearch"]').on('keydown', function(e) {
         // Note: event.code is the right way to do things going forward, but isn't compatible with all browsers, so we'll use fallbacks like "which" and "keyCode".
         var isEnterKey = (event.code && event.code === 'Enter') || (e.which && e.which === 13) || (e.keyCode && e.keyCode === 13);
         var $selectedBestBetResult = $(this).closest('form').find('.best-bet-result.tt-cursor');
@@ -89,7 +89,7 @@ jQuery(function($){
     });
 
     // Clicking on a best bet suggestion, send the user to the selected item url
-    $('#hero-search').on('click', '.best-bet-result', function(e) {
+    $('[data-id="hero-search"]').on('click', '.best-bet-result', function(e) {
         // Prevent default so that a click on an anchor tag is ignored in favor of the javascript below
         e.preventDefault();
         // Navigate to clicked-on best bet item url

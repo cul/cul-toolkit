@@ -1,0 +1,100 @@
+<style>
+.cul-icon_links a {
+    margin-top: 0;
+}
+.cul-icon_links a:hover {
+    text-decoration: none;
+    color:var(--primary);
+}
+.cul-icon_links i, .cul-icon_links svg {
+    font-size: 4.75rem;
+    color:var(--icon-grey-color);
+    -moz-transition: -moz-transform .2s;
+    -o-transition: -o-transform .2s;
+    -webkit-transition: -webkit-transform .2s;
+    transition: transform .2s;
+}
+.cul-icon_links a:hover i, .cul-icon_links a:hover svg {
+    color:var(--a-link-color);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+@media (min-width: 576px) {
+	.cul-collections_carousel .carousel-control-next,
+	.cul-collections_carousel .carousel-control-prev {
+        width: 8%;
+    }
+}
+
+.cul-collections_carousel .carousel-inner {
+    overflow: visible;
+}
+
+@media (min-width: 768px) {
+    .cul-collections_carousel .carousel-inner {
+        overflow: hidden;
+    }
+}
+
+.cul-collections_carousel .carousel-item,
+.cul-collections_carousel .carousel-item .card {
+    height: 400px;
+}
+
+.cul-collections_carousel .carousel-item,
+.cul-collections_carousel .carousel-item .card,
+.cul-collections_carousel .carousel-item .card-body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-shadow: var(--text-shadow-color);
+}
+
+.cul-collections_carousel .card-body a {
+    -moz-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    -webkit-transition: background-color .2s;
+    transition: background-color .2s;
+}
+
+.cul-collections_carousel .card-body a:hover {
+    background-color: rgba(0,0,0,.75);
+    text-decoration: none;
+}
+
+.cul-collections_carousel .carousel-item .card {
+    border-radius:0;
+    height: 100%;
+}
+
+.cul-collections_carousel .carousel-item .card-title {
+    margin-bottom: 0;
+}
+
+.cul-collections_carousel .carousel-item .card-body a,
+.cul-collections_carousel .carousel-caption {
+    color: white;
+    text-shadow: var(--text-shadow-color);
+}
+
+.cul-collections_carousel .card-body a:hover .carousel-caption {
+    text-decoration: none;
+}
+
+.cul-collections_carousel .carousel-item .card-text {
+    font-size: .9rem;
+}
+
+.cul-collections_carousel .carousel-control-prev, 
+.cul-collections_carousel .carousel-control-next {
+	top: 45%;
+	bottom: unset;
+}
+.nav-link.dropdown-toggle:hover,
+.nav-link.dropdown-toggle.show { color:var(--bs-navbar-hover-color) !important; }
+.cul-cols .dropdown-item:hover { text-decoration: underline; }
+</style>
