@@ -97,4 +97,25 @@
 .nav-link.dropdown-toggle:hover,
 .nav-link.dropdown-toggle.show { color:var(--bs-navbar-hover-color) !important; }
 .cul-cols .dropdown-item:hover { text-decoration: underline; }
+
+#search-hero {
+	&.navbar {
+		min-height: 140px; 
+		@media (min-width: 992px) {
+			height:32vh;
+		}
+		background-image: url('https://toolkit.library.columbia.edu/v3/img/campus-and-city-image.jpg');
+		background-size: cover;
+		background-blend-mode: soft-light;
+		background-color: rgb(108, 117, 125) !important;
+		background-position: center 70%;
+	}
+	form {
+		position: relative;
+	}
+	button[type=reset] {
+		position:absolute;
+		right:0.3em;
+	}
+}
 </style>
