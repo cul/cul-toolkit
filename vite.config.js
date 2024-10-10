@@ -16,7 +16,7 @@ const pageData = {
   '/examples/blogs-index.html': {
     title: 'cul-toolkit &raquo; examples &raquo; CUL Blogs Example Landing Page',
 	whichHero: '_slimhero',
-	stylesheet: ['_example-styles.scss'],
+	stylesheet: ['_example-styles.scss', '_blogs-styles.scss'],
 	heroTitle: 'Columbia University Libraries Blogs',
   },
   '/examples/lweb-home.html': {
