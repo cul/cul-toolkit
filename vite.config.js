@@ -25,6 +25,14 @@ const pageData = {
 	stylesheet: ['_example-styles.scss', '_lweb-styles.scss'],
 	heroTitle: 'Columbia University Libraries',
   },
+  '/examples/staffweb-home.html': {
+    title: 'cul-toolkit &raquo; examples &raquo; CUL StaffWeb Example Landing Page',
+	searchHero: true,
+	searchHeroPlaceholder: 'Search StaffWeb',
+	stylesheet: ['_example-styles.scss', '_staffweb-styles.scss'],
+	whichHero: '_slimhero',
+	heroTitle: 'StaffWeb',
+  },
 };
 
 export default defineConfig({
@@ -63,6 +71,7 @@ export default defineConfig({
         examples: resolve(__dirname, 'src/examples/index.html'),
         blogIndex: resolve(__dirname, 'src/examples/blogs-index.html'),
         lwebIndex: resolve(__dirname, 'src/examples/lweb-home.html'),
+        staffIndex: resolve(__dirname, 'src/examples/staffweb-home.html'),
       },
       output: {
         //entryFileNames: `assets/[name].js`,
