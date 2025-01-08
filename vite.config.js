@@ -28,7 +28,8 @@ const pageData = {
   '/examples/staffweb-home.html': {
     title: 'cul-toolkit &raquo; examples &raquo; CUL StaffWeb Example Landing Page',
 	searchHero: true,
-	searchHeroPlaceholder: '&#x1F50D; Search StaffWeb&hellip;',
+	searchHeroPlaceholder: '&#x1F50D; Search StaffWeb pages&hellip;',
+	searchInputAddClasses: 'rounded-pill',
 	stylesheet: ['_example-styles.scss', '_staffweb-styles.scss'],
 	//whichHero: '_slimhero',
 	//heroTitle: 'StaffWeb',
