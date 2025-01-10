@@ -22,6 +22,7 @@ const pageData = {
   '/examples/lweb-home.html': {
     title: 'cul-toolkit &raquo; examples &raquo; CUL LWeb Example Landing Page',
 	searchHero: true,
+	searchHeroPlaceholder: '&#x1F50D; Search CLIO & the Libraries&hellip;',
 	stylesheet: ['_example-styles.scss', '_lweb-styles.scss'],
 	heroTitle: 'Columbia University Libraries',
   },
