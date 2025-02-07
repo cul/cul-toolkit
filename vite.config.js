@@ -80,7 +80,8 @@ export default defineConfig({
         blogIndex: resolve(__dirname, 'src/examples/blogs-index.html'),
         lwebIndex: resolve(__dirname, 'src/examples/lweb-home.html'),
         staffIndex: resolve(__dirname, 'src/examples/staffweb-home.html'),
-        staffInnner: resolve(__dirname, 'src/examples/staffweb-inner-hr.html'),
+        staffInner: resolve(__dirname, 'src/examples/staffweb-inner-hr.html'),
+        staffInnerInner: resolve(__dirname, 'src/examples/staffweb-inner-hr-jobs.html'),
       },
       output: {
         //entryFileNames: `assets/[name].js`,
