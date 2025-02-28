@@ -5,10 +5,6 @@
       "value": "Services &amp; Tools"
     },
     {
-      "href": "https://library.columbia.edu/services/faq.html",
-      "value": "FAQ"
-    },
-    {
       "href": "https://library.columbia.edu/using-libraries/alumni.html",
       "value": "For Alumni"
     },
@@ -189,7 +185,11 @@
       "value": "Getting Started with the Libraries"
     },
     {
-      "href": "https://library.columbia.edu/services/research-data-services.html",
+      "href": "https://library.columbia.edu/research-teaching/open-scholarship.html",
+      "value": "Open Scholarship Services"
+    },
+    {
+      "href": "https://library.columbia.edu/research-teaching/research-data.html",
       "value": "Research Data Services"
     },
     {
