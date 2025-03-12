@@ -5,13 +5,14 @@ require 'rainbow'
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.18.0'
 
+set :application, 'cul_toolkit_v5'
 set :remote_user, 'culwcm'
 set :repo_url, "git@github.com:cul/cul-toolkit.git"
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/app/wcm2-local/cul-toolkit/deployments/v3"
+set :deploy_to, "/app/wcm2-local/cul-toolkit/deployments/v5"
 
-set :v3_docroot, '/app/wcm2-local/cul-toolkit/html/v3'
+set :v5_docroot, '/app/wcm2-local/cul-toolkit/html/v5'
 
 # Default value for :linked_files is []
 # append  :linked_files,
@@ -33,7 +34,7 @@ set :log_level, :info
 # nvm exec 16 ~/.rvm-alma8/bin/rvm example_app_dev do node --version
 # But this does not work:
 # ~/.rvm-alma8/bin/rvm example_app_dev do nvm exec 16 node --version
-set :nvm_node_version, "cul_toolkit_#{fetch(:stage)}" # This NVM alias must exist on the server
+set :nvm_node_version, "#{fetch(:application)}_#{fetch(:stage)}" # This NVM alias must exist on the server
 [:rake, :node, :npm, :yarn].each do |command_to_prefix|
   SSHKit.config.command_map.prefix[command_to_prefix].push("nvm exec #{fetch(:nvm_node_version)}")
 end
@@ -66,7 +67,7 @@ set :default_env, NODE_ENV: 'development' # We deploy in development mode becaus
 before 'deploy:starting', :create_tmp_dir
 before 'deploy:starting', :ensure_deployment_dependencies
 before 'deploy:symlink:release', :build_dist
-after 'deploy:symlink:release', :symlink_v3
+after 'deploy:symlink:release', :symlink_v5
 
 desc 'create tmp directory'
 task :create_tmp_dir do
@@ -104,22 +105,22 @@ end
 
 desc 'run yarn build to create the dist directory'
 task :build_dist do
-  # Note that the yarn tasks below are run in sequence rather than in parallel!
-  # This is necessary because in our test and prod environments we deploy simultaneously to two
-  # load-balanced hosts with a shared, network-mounted user home directory, and the yarn commands
-  # generally fail when running at the same time in this scenario if they're run in parallel.
+  # Note that the tasks below are run inside a block that uses the `in: :sequence` argument
+  # because in our test and prod environments we deploy simultaneously to two load-balanced hosts
+  # with a shared, network-mounted user home directory, and the npm commands generally fail when
+  # running at the same time in this scenario if they're run in parallel (which would be the default).
   on roles(:web), in: :sequence do
     within release_path do
-      execute :yarn, 'install --ignore-engines'
-      execute :yarn, 'build'
+      execute :npm, 'install'
+      execute :npm, 'run', 'build'
     end
   end
 end
 
-desc 'symlink v3'
-task :symlink_v3 do
+desc 'symlink v5'
+task :symlink_v5 do
   on roles(:web) do
-    execute :ln, '-sf', File.join(fetch(:deploy_to), 'current', 'dist'), fetch(:v3_docroot)
+    execute :ln, '-sf', File.join(fetch(:deploy_to), 'current', 'dist'), fetch(:v5_docroot)
   end
 end
 
