@@ -1,6 +1,6 @@
 {
   "name": "cul-toolkit",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "CUL customized Bootstrap 5 with Vite!",
   "type": "module",
   "main": "index.js",

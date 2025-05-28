@@ -89,3 +89,26 @@ input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-results-decoration {
 	  -webkit-appearance:none;
   }
+
+/* animations */
+	.animate {
+	  animation-duration: 0.75s;
+	  animation-delay: 0.1s;
+	  animation-name: animate-fade;
+	  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+	  animation-fill-mode: backwards;
+	}
+	/* Roll In */
+	.animate.roll { animation-name: animate-roll; }
+
+	@keyframes animate-roll {
+	  0% {
+		opacity: 0;
+		transform: scale(0, 0) rotate(360deg);
+	  }
+	  100% {
+		opacity: 1;
+		transform: scale(1, 1) rotate(0deg);
+	  }
+	}
+/* /animations */
