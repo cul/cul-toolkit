@@ -3,7 +3,7 @@
 require 'rainbow'
 
 # config valid for current version and patch releases of Capistrano
-lock '~> 3.18.0'
+lock '~> 3.19.0'
 
 set :application, 'cul_toolkit_v5'
 set :remote_user, 'culwcm'
