@@ -1,17 +1,23 @@
 {
-  "name": "cul-toolkit",
-  "version": "5.0.1",
-  "description": "CUL customized Bootstrap 5 with Vite!",
+  "name": "@columbia-libraries/cul-toolkit",
+  "version": "5.0.4",
+  "description": "CUL customized Bootstrap 5 with Vite! Intended only for CUL projects and therefore unsupported.",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "files": [
+    "dist/assets",
+    "dist/js"
+  ],
+  "keywords": ["cul"],
   "author": "https://github.com/cul/cul-toolkit/graphs/contributors",
+  "repository": "https://github.com/cul/cul-toolkit",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.83.0",
