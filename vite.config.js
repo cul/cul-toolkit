@@ -43,6 +43,15 @@ const pageData = {
   },
 };
 
+const decodeHtml = (html) => {
+  return html
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#039;/g, "'");
+};
+
 export default defineConfig({
   root: resolve(__dirname, 'src'),
   base: '',
@@ -59,11 +68,21 @@ export default defineConfig({
       },
       helpers: {
         lowerdash: (str) => {
-          return str.fn(this).replace(/\s+/g, '-').toLowerCase()
-        },
+          if (typeof str !== 'string') return '';
+          str = decodeHtml(str);
+          let result = str
+            .toLowerCase()
+            .trim()
+            .replace(/&/g, 'and')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, ''); 
+          if (!/^[a-z]/.test(result)) {
+            result = 'id-' + result;
+          }
+          return result;
+        }
       },
       runtimeOptions: {
-        // config option: define custom private @variables
         data: {
           apptitle: 'cul-toolkit',
         },
