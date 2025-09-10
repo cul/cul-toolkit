@@ -165,10 +165,6 @@
     {
       "href": "https://library.columbia.edu/using-libraries/printing.html",
       "value": "Print, Scan, Digitize"
-    },
-    {
-      "href": "https://library.columbia.eduusing-libraries/workshops.html",
-      "value": "Workshops and Training"
     }
   ],
   "Research &amp; Teaching": [
@@ -221,6 +217,10 @@
     {
       "href": "https://library.columbia.edu/about/values.html",
       "value": "Our Values &amp; Commitment in Action"
+    },
+        {
+      "href": "https://library.columbia.edu/about/policies.html",
+      "value": "Policies"
     },
     {
       "href": "https://library.columbia.edu/about/staff.html",
