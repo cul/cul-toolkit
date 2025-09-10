@@ -1,6 +1,6 @@
 {
   "name": "@columbia-libraries/cul-toolkit",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "description": "CUL customized Bootstrap 5 with Vite! Intended only for CUL projects and therefore unsupported.",
   "type": "module",
   "main": "index.js",
