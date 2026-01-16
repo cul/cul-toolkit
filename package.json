@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+	"build": "vite build --config vite.config.js && vite build --config vite.bundle.config.js",
+	"dev": "vite --config vite.config.js",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build"
