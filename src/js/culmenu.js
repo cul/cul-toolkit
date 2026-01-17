@@ -5,9 +5,7 @@
  * bootstrap 5 dependent.
  */
 
-import culmenuFallback from './cul-main-menu.json';
 import { fetchCULmenu } from './culmenu-fetch.js';
-import { Collapse } from 'bootstrap';
 
 /**
  * initialize all collapse-style menus
@@ -17,34 +15,24 @@ export async function makeCULmenu(jsonUrl) {
   const targets = document.querySelectorAll('[data-cul-menu]');
   if (!targets.length) return;
 
-  const menuData = await fetchCULmenu(jsonUrl, culmenuFallback);
+  const menuData = await fetchCULmenu(jsonUrl);
 
   targets.forEach((el, index) => {
     const config = getConfig(el, index);
     const menu = buildCollapseMenu(menuData, config);
     el.replaceChildren(menu);
 
-    // initialize bootstrap collapse
-    if (config.useCollapse) {
-      menu.querySelectorAll('[data-bs-toggle="collapse"]').forEach(toggle => {
-        const collapseSelector = toggle.dataset.bsTarget;
-        if (!collapseSelector) return;
-
-        const collapseEl = document.querySelector(
-          CSS.escape(collapseSelector.slice(1))
-        );
-        if (collapseEl) new Collapse(collapseEl, { toggle: false });
-      });
-    }
-
-    // mark menu container as loaded
     markLoaded(el);
   });
 }
 
-/**
- * read config from data-attributes with safe defaults
- */
+/** mark container as loaded */
+function markLoaded(el) {
+  el.classList.remove('cul-menu-loading');
+  el.classList.add('cul-menu-loaded');
+}
+
+/** read config from data attributes with safe defaults */
 function getConfig(el, index) {
   return {
     prefix: el.dataset.menuId || `culmenu-${index}`,
@@ -58,9 +46,7 @@ function getConfig(el, index) {
   };
 }
 
-/**
- * Build collapse menu DOM
- */
+/** build collapse menu dom */
 function buildCollapseMenu(data, config) {
   const ul = document.createElement('ul');
   ul.className = config.listClasses;
@@ -110,19 +96,8 @@ function buildCollapseMenu(data, config) {
   return ul;
 }
 
-/**
- * utility
- */
+/** utility slugify */
 function slug(str) {
-  return str
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9\-_]/g, '');
-}
-
-function markLoaded(el) {
-  el.classList.remove('cul-menu-loading');
-  el.classList.add('cul-menu-loaded');
+  return str.toLowerCase().replace(/\s+/g, '-');
 }
 

@@ -2,8 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import fs from 'fs';
 import handlebars from 'vite-plugin-handlebars';
-//import culmenu from '/cul-main-menu.json'
-import culmenu from './src/public/cul-main-menu.json';
+import culmenu from './src/js/cul-main-menu.json';
 
 const pkg = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf-8'));
 const banner = `/*!

@@ -16,3 +16,9 @@
 
 # Ignore dist dir because we want to build it upon deployment rather than keeping it in the repo
 /dist
+
+# Ignore .env files except .env.example
+.env
+.env.*
+!.env.example
+

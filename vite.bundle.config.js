@@ -1,23 +1,23 @@
+// vite.bundle.config.js
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import fs from 'fs';
+import pkg from './package.json';
 
-const pkg = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf-8'));
 const banner = `/*!
- * CUL Menu
- * Version: ${pkg.version}
- * Built: ${new Date().toISOString()}
- */`;
+ * CUL Menu v${pkg.version}
+ * (c) ${new Date().getFullYear()}
+ */
+`;
 
 export default defineConfig({
   root: resolve(__dirname, 'src'),
-  publicDir: false,
   base: '',
+  publicDir: false, // don't copy public/ for bundle
   define: {
     __VERSION__: JSON.stringify(pkg.version)
   },
   build: {
-    outDir: resolve(__dirname, 'dist/bundles'),
+    outDir: '../dist/bundles',
     emptyOutDir: true,
     lib: {
       entry: resolve(__dirname, 'src/js/cul-menu-bundle.js'),
@@ -33,4 +33,5 @@ export default defineConfig({
     }
   }
 });
+
 
