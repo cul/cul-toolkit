@@ -1,12 +1,19 @@
-// Our main js goes here!
+// main.js
 
-// Import our custom CSS
-import '../scss/styles.scss'
+// load styles first
+import '../scss/styles.scss';
 
-// Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
+// load bootstrap js (dropdowns, collapse, etc.)
+import * as bootstrap from 'bootstrap';
 
-// import our CUL menu from JSON builder
-//import { makeCULmenu } from './culmenu.js'
-//makeCULmenu('main-menu');
+import { makeCULmenu } from './culmenu.js';
+import { makeCULNavbarMenu } from './culmenu-navbar.js';
+
+const MENU_URL =
+  import.meta.env.VITE_CUL_MENU_URL || undefined;
+
+makeCULmenu(MENU_URL);
+makeCULNavbarMenu('[data-cul-navbar]', MENU_URL);
+
+//console.log('MENU_URL:', import.meta.env.VITE_CUL_MENU_URL);
 

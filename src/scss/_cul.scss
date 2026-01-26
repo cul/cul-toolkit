@@ -111,4 +111,12 @@ input[type="search"]::-webkit-search-decoration,
 		transform: scale(1, 1) rotate(0deg);
 	  }
 	}
-/* /animations */
+
+/* menu loading */
+.cul-menu-loading {
+  opacity: 0.6;
+}
+.cul-menu-loaded {
+  opacity: 1;
+}
+

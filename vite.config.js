@@ -1,7 +1,15 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import fs from 'fs';
 import handlebars from 'vite-plugin-handlebars';
-import culmenu from './src/js/cul-main-menu.json'
+import culmenu from './src/js/cul-main-menu.json';
+
+const pkg = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf-8'));
+const banner = `/*!
+ * CUL Menu
+ * Version: ${pkg.version}
+ * Built: ${new Date().toISOString()}
+ */`;
 
 const pageData = {
   '/index.html': {
@@ -55,6 +63,9 @@ const decodeHtml = (html) => {
 export default defineConfig({
   root: resolve(__dirname, 'src'),
   base: '',
+  define: {
+    __VERSION__: JSON.stringify(pkg.version)
+  },
   plugins: [
     handlebars({
       partialDirectory: [
