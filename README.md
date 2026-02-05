@@ -197,7 +197,7 @@ Standalone bundle:
 
 <nav data-cul-menu></nav>
 
-<script src="https://toolkit-dev.library.columbia.edu/v5/bundles/cul-menu.bundle.js"></script>
+<script src="https://toolkit.library.columbia.edu/v5/bundles/cul-menu.bundle.js"></script>
 <script>
   CULMenu.initCollapse({
     url: 'https://toolkit.library.columbia.edu/v5/assets/cul-main-menu.json'
