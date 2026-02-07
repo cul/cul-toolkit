@@ -225,17 +225,16 @@ import '@columbia-libraries/cul-toolkit/setup';
 
 import { makeCULmenu } from '@columbia-libraries/cul-toolkit';
 
-
 const MENU_URL =
   import.meta.env.VITE_CUL_MENU_URL ||
-  "https://toolkit.library.columbia.edu/v5/assets/cul-main-menu.json";
+  'https://toolkit.library.columbia.edu/v5/assets/cul-main-menu.json';
 
-makeCULmenu(url);
+makeCULmenu(MENU_URL);
 ```
 
 *Framework Notes*
 
-	makeCULmenu(url) manipulates DOM elements with [data-cul-menu].
+	makeCULmenu(MENU_URL) manipulates DOM elements with [data-cul-menu].
 	It must be called after the elements exist in the DOM:
 
 	- Vue: call after app.mount() or inside onMounted() / nextTick().
