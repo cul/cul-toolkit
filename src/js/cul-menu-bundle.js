@@ -18,8 +18,5 @@ function initNavbar(options) {
   return makeCULNavbarMenu(options.selector, options.url);
 }
 
-export default {
-  initCollapse,
-  initNavbar
-};
+export { makeCULmenu, initCollapse, initNavbar };
 

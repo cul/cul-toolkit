@@ -121,7 +121,7 @@ Requirements:
 
 #### Environmental Variable 
 
-Create `src/.env`:
+Create root `.env`:
 
 ```env
 VITE_CUL_MENU_URL=https://menus.example.com/cul-main-menu.json
@@ -190,10 +190,10 @@ Standalone bundle:
 * `cul-menu.bundle.js` (IIFE, for `<script>` tags)
 * `cul-menu.bundle.es.js` (ES module)
 
-#### Example (static HTML)
+#### Example static HTML / IIFE usage
 
 ```html
-<link rel="stylesheet" href="bootstrap.css">
+<link rel="stylesheet" href="https://toolkit.library.columbia.edu/v5/setup.css">
 
 <nav data-cul-menu></nav>
 
@@ -209,14 +209,96 @@ Standalone bundle:
 
 ---
 
-## Build Output
+#### ES module app usage
 
+*Installation*
+
+```bash
+npm install @columbia-libraries/cul-toolkit
 ```
-dist/assets/
-	cul-main-menu.json 
-dist/bundles/
-	cul-menu.bundle.js
-	cul-menu.bundle.es.js
+
+*Import and usage*
+
+```js
+import '@columbia-libraries/cul-toolkit/styles';
+import '@columbia-libraries/cul-toolkit/setup';
+
+import { makeCULmenu } from '@columbia-libraries/cul-toolkit';
+
+
+const MENU_URL =
+  import.meta.env.VITE_CUL_MENU_URL ||
+  "https://toolkit.library.columbia.edu/v5/assets/cul-main-menu.json";
+
+makeCULmenu(url);
+```
+
+*Framework Notes*
+
+	makeCULmenu(url) manipulates DOM elements with [data-cul-menu].
+	It must be called after the elements exist in the DOM:
+
+	- Vue: call after app.mount() or inside onMounted() / nextTick().
+	- React: call inside useEffect(() => { ... }, []).
+
+*Vue note:*
+```js
+import { createApp, nextTick } from 'vue';
+import App from './App.vue';
+import { makeCULmenu } from '@columbia-libraries/cul-toolkit';
+
+const app = createApp(App);
+
+// for after app is mounted:
+app.mount('#app');
+nextTick(() => {
+  makeCULmenu(MENU_URL);
+});
+
+// or for inside a component:
+onMounted(() => {
+  makeCULmenu(MENU_URL);
+});
+```
+
+*React/other frameworks:*
+
+	Call after the component that contains [data-my-menu] has mounted.
+
+*Markup requirement*
+
+	Must include target element: <nav data-my-menu></nav>
+
+--- 
+
+#### Available Globals
+
+- CULMenu.initCollapse({ url });
+- CULMenu.initNavbar({ selector, url });
+
+---
+
+### Build Output (npm package)
+
+```bash
+dist/
+├── assets/
+│   ├── columbia_crown_logo-square-135x135.svg
+│   ├── cul-main-menu.json
+│   ├── cul-text-logo.svg
+│   ├── favicon.ico
+│   ├── main.css
+│   └── main.js
+├── bundles/
+│   ├── cul-menu.bundle.es.js
+│   ├── cul-menu.bundle.es.js.map
+│   ├── cul-menu.bundle.js
+│   └── cul-menu.bundle.js.map
+├── js/
+│   ├── quicksearch.js
+│   └── typeahead-0.11.1.bundle.min.js
+├── setup.css
+└── setup.js
 ```
 
 ---

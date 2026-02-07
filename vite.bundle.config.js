@@ -1,4 +1,3 @@
-// vite.bundle.config.js
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import pkg from './package.json';
@@ -12,7 +11,7 @@ const banner = `/*!
 export default defineConfig({
   root: resolve(__dirname, 'src'),
   base: '',
-  publicDir: false, // don't copy public/ for bundle
+  publicDir: false,
   define: {
     __VERSION__: JSON.stringify(pkg.version)
   },
@@ -28,10 +27,11 @@ export default defineConfig({
           ? 'cul-menu.bundle.js'
           : 'cul-menu.bundle.es.js'
     },
+    minify: 'esbuild',
+    sourcemap: true,
     rollupOptions: {
       output: { banner }
     }
   }
 });
-
 
