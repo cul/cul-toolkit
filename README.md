@@ -2,43 +2,44 @@
 
 _Version 5.x_
 
-## Development requirements
+## Requirements
 ```
-nodejs >= v20
-npm >= 10.2
+nodejs >= v22
 ```
 
-## Vite for development
-Dev server runs on http://localhost:8181 and auto-recompiles code when resources change.
+## Development
+Start the Vite dev server:
 ```
-npm start
+npm run dev
 ```
-Preview server runs on http://localhost:4173 and serves the built dist/ dir.
+The app is available at http://localhost:5173
+
+## Preview production build
+Serve the production build locally:
 ```
 npm run preview
 ```
 
-## Vite Build Instructions
-Vite will bundle code and copy public/ files for distribution into the dist/ dir.
-```
-npm install # run the first time you want to build, or if the package-lock.json file has changed
-```
-```
+## Build
+Install dependencies and build:
+```bash
+npm install
 npm run build
 ```
+The output is written to the dist/ directory.
 
 ## Deployment requirements
 
 Local machine:
 ```
-ruby >= 2.5.3 (we currently have a .ruby-version file requiring 2.5.3)
+ruby >= 2.7.5 (we currently have a .ruby-version file requiring 2.7.5)
 bundler
 ```
 
 Remote deployment server:
 ```
-node >= 10.17.0
-yarn >= 1.19.1
+node >= 22
+npm >= 10
 ```
 ## Deploying a versioned release
 
