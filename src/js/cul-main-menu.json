@@ -5,10 +5,6 @@
       "value": "Services & Tools"
     },
     {
-      "href": "https://library.columbia.edu/services/faq.html",
-      "value": "FAQ"
-    },
-    {
       "href": "https://library.columbia.edu/using-libraries/alumni.html",
       "value": "For Alumni"
     },
@@ -79,10 +75,6 @@
       "value": "Mathematics Library"
     },
     {
-      "href": "https://library.columbia.edu/libraries/undergraduate.html",
-      "value": "Milstein Undergraduate Library"
-    },
-    {
       "href": "https://library.columbia.edu/libraries/rbml.html",
       "value": "Rare Book & Manuscript Library"
     },
@@ -117,16 +109,12 @@
       "value": "Collection Development"
     },
     {
-      "href": "https://library.columbia.edu/collections/digital-collections.html",
-      "value": "Digital Collections & Exhibitions"
+      "href": "https://dlc.library.columbia.edu",
+      "value": "Digital Collections"
     },
     {
       "href": "https://library.columbia.edu/collections/eresources.html",
       "value": "E-Resources"
-    },
-    {
-      "href": "https://library.columbia.edu/collections/oral-history-portal.html",
-      "value": "Oral History Collections"
     },
     {
       "href": "https://resolver.library.columbia.edu/lweb0004",
@@ -177,12 +165,16 @@
       "value": "Research & Teaching"
     },
     {
-      "href": "https://copyright.columbia.edu/index.html",
-      "value": "Copyright Advisory Services"
+      "href": "https://library.columbia.edu/research-teaching/copyright.html",
+      "value": "Copyright Information"
     },
     {
       "href": "https://library.columbia.edu/research-teaching/getting-started.html",
       "value": "Getting Started with the Libraries"
+    },
+    {
+      "href": "https://library.columbia.edu/research-teaching/global.html",
+      "value": "Global Studies"
     },
     {
       "href": "https://library.columbia.edu/research-teaching/open-scholarship.html",
