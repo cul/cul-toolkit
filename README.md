@@ -125,7 +125,7 @@ Requirements:
 Create root `.env`:
 
 ```env
-VITE_CUL_MENU_URL=https://menus.example.com/cul-main-menu.json
+VITE_CUL_MENU_URL=https://toolkit.library.columbia.edu/v5/assets/cul-main-menu.json
 ```
 
 #### main.js
