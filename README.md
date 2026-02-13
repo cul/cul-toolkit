@@ -237,25 +237,27 @@ makeCULmenu(MENU_URL);
 
 SCSS source files are exposed enabling finer‑grained control and theming.
 
-**Important:** To ensure CUL Toolkit variable overrides work, import `_variables.scss` **before** Bootstrap's variables:
+You can import the **full SCSS entrypoint**:
 
 ```scss
-// Step 1: Bootstrap core functions
-@import "bootstrap/scss/functions";
+@import "@columbia-libraries/cul-toolkit/src/scss/styles";
+```
+Or import individual SCSS modules:
+```scss
+// Step 1: CUL Toolkit variables (must come before Bootstrap variables)
+@import '@columbia-libraries/cul-toolkit/src/scss/_variables';
 
-// Step 2: CUL Toolkit variables (must come before Bootstrap variables)
-@import "@columbia-libraries/cul-toolkit/src/scss/_variables";
+// Step 2: Your project-specific variables
+@import '../src/styles/variables';
+@import '../src/styles/fontawesome-pro';
 
-// Step 3: Bootstrap variables and core
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/bootstrap";
+// Step 3: Bootstrap core
+@import 'bootstrap';
+@import 'blacklight-frontend/app/assets/stylesheets/blacklight/blacklight';
 
-// Step 4: Blacklight overrides (optional)
-@import "blacklight-frontend/app/assets/stylesheets/blacklight/blacklight";
-
-// Step 5: CUL Toolkit components
-@import "@columbia-libraries/cul-toolkit/src/scss/_cul";
-@import "@columbia-libraries/cul-toolkit/src/scss/_sidebars";
+// Step 4: CUL Toolkit components
+@import '@columbia-libraries/cul-toolkit/src/scss/_cul';
+@import '@columbia-libraries/cul-toolkit/src/scss/_sidebars';
 ```
 
 This allows you to override variables, functions, or partials before compiling with your own build pipeline (Sass, Rails asset pipeline, Webpack, Vite, etc.).

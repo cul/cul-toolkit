@@ -41,7 +41,10 @@
     },
     "./dist/assets/*": "./dist/assets/*",
     "./dist/bundles/*": "./dist/bundles/*",
-    "./dist/js/*": "./dist/js/*"
+    "./dist/js/*": "./dist/js/*",
+    "./src/scss/_variables": "./src/scss/_variables.scss",
+    "./src/scss/_cul": "./src/scss/_cul.scss",
+    "./src/scss/_sidebars": "./src/scss/_sidebars.scss"
   },
   "devDependencies": {
     "cssnano": "^7.1.2",
