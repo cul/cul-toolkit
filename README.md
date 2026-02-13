@@ -212,13 +212,13 @@ Standalone bundle:
 
 #### ES module app usage
 
-*Installation*
+##### *Installation*
 
 ```bash
 npm install @columbia-libraries/cul-toolkit
 ```
 
-*Import and usage*
+##### *Import and usage*
 
 ```js
 import '@columbia-libraries/cul-toolkit/styles';
@@ -233,7 +233,35 @@ const MENU_URL =
 makeCULmenu(MENU_URL);
 ```
 
-*Framework Notes*
+##### *Importing Individual SCSS Partials*
+
+SCSS source files are exposed enabling finer‑grained control and theming.
+
+**Important:** To ensure CUL Toolkit variable overrides work, import `_variables.scss` **before** Bootstrap's variables:
+
+```scss
+// Step 1: Bootstrap core functions
+@import "bootstrap/scss/functions";
+
+// Step 2: CUL Toolkit variables (must come before Bootstrap variables)
+@import "@columbia-libraries/cul-toolkit/src/scss/_variables";
+
+// Step 3: Bootstrap variables and core
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/bootstrap";
+
+// Step 4: Blacklight overrides (optional)
+@import "blacklight-frontend/app/assets/stylesheets/blacklight/blacklight";
+
+// Step 5: CUL Toolkit components
+@import "@columbia-libraries/cul-toolkit/src/scss/_cul";
+@import "@columbia-libraries/cul-toolkit/src/scss/_sidebars";
+```
+
+This allows you to override variables, functions, or partials before compiling with your own build pipeline (Sass, Rails asset pipeline, Webpack, Vite, etc.).
+
+
+##### *Framework Notes*
 
 	makeCULmenu(MENU_URL) manipulates DOM elements with [data-cul-menu].
 	It must be called after the elements exist in the DOM:
@@ -241,7 +269,7 @@ makeCULmenu(MENU_URL);
 	- Vue: call after app.mount() or inside onMounted() / nextTick().
 	- React: call inside useEffect(() => { ... }, []).
 
-*Vue note:*
+###### *Vue note:*
 ```js
 import { createApp, nextTick } from 'vue';
 import App from './App.vue';
@@ -261,11 +289,11 @@ onMounted(() => {
 });
 ```
 
-*React/other frameworks:*
+###### *React/other frameworks:*
 
 	Call after the component that contains [data-my-menu] has mounted.
 
-*Markup requirement*
+##### *Markup requirement*
 
 	Must include target element: <nav data-my-menu></nav>
 
