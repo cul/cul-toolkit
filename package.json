@@ -17,7 +17,8 @@
     "dist/bundles",
     "dist/js",
     "dist/setup.js",
-    "dist/setup.css"
+    "dist/setup.css",
+    "src/scss"
   ],
   "keywords": [
     "cul"
