@@ -49,6 +49,22 @@ const pageData = {
     title: 'cul-toolkit &raquo; examples &raquo; CUL StaffWeb Example Inner HR Jobs Page',
     stylesheet: ['_example-styles.scss', '_staffweb-styles.scss'],
   },
+  '/examples/online_exhibitions-individual_home.html': {
+    title: 'cul-toolkit &raquo; examples &raquo; CUL Online Exhibitions Individual Home',
+    whichHero: '_online-exhibitions-hero',
+    heroTitle: 'Roar, Lion, Roar!',
+    stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss'],
+    adobeFontsKit: 'uhm4ygw',
+	adobeFonts: true,
+  },
+  '/examples/online_exhibitions-standard_page.html': {
+    title: 'cul-toolkit &raquo; examples &raquo; CUL Online Exhibitions Standard Page',
+    whichHero: '_online-exhibitions-hero',
+    heroTitle: 'Roar, Lion, Roar!',
+    stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss', '_online_exhibitions-standard_page.scss'],
+    adobeFontsKit: 'uhm4ygw',
+	adobeFonts: true,
+  },
 };
 
 const decodeHtml = (html) => {
@@ -112,6 +128,8 @@ export default defineConfig({
         staffIndex: resolve(__dirname, 'src/examples/staffweb-home.html'),
         staffInner: resolve(__dirname, 'src/examples/staffweb-inner-hr.html'),
         staffInnerInner: resolve(__dirname, 'src/examples/staffweb-inner-hr-jobs.html'),
+        onlineExhibitionsIndividualHome: resolve(__dirname, 'src/examples/online_exhibitions-individual_home.html'),
+        onlineExhibitionsStandardPage: resolve(__dirname, 'src/examples/online_exhibitions-standard_page.html'),
       },
       output: {
         //entryFileNames: `assets/[name].js`,

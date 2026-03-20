@@ -1,0 +1,40 @@
+<style>
+#slim-hero {
+	&.navbar {
+		min-height: 100dvh;
+		//min-height: calc(100dvh - 56px);
+		background-image: url(../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17.jpg);
+		background-size: cover;
+		background-blend-mode: unset; 
+		background-color: rgb(108, 117, 125) !important;
+		background-position: center 70%;
+		h1 {
+			font-family: "Trajan Pro 3", system-ui, -apple-system, sans-serif;
+			font-weight: 400;
+		}
+	}
+}
+#sw-hero {
+		background-image: url(../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17.jpg);
+		background-size: cover;
+		background-blend-mode: soft-light;
+		background-color: rgb(238, 245, 255) !important;
+		background-position: center 70%;
+}
+#search-hero {
+	&.navbar {
+		background-color: transparent !important;
+		background-position: center 70%;
+	}
+	form {
+		position: relative;
+	}
+	button[type=reset] {
+		position:absolute;
+		right:0.3em;
+	}
+	.best-bet-result {
+		text-align: left;
+	}
+}
+</style>
