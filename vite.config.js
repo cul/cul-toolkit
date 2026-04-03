@@ -53,6 +53,7 @@ const pageData = {
     title: 'cul-toolkit &raquo; examples &raquo; CUL Online Exhibitions',
     whichHero: '_online-exhibitions-site-hero',
     heroTitle: 'Online Exhibitions',
+	hideAddr: true,
     stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss'],
     adobeFontsKit: 'uhm4ygw',
 	adobeFonts: true,
