@@ -5,20 +5,27 @@
 		font-weight: 400;
 	}
 }
-#slim-hero {
-	&.navbar {
-		min-height: 100dvh;
-		//min-height: calc(100dvh - 56px);
-		background-image: url(../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17-c.jpg);
-		background-size: cover;
-		background-blend-mode: unset; 
-		background-color: rgb(108, 117, 125) !important;
-		background-position: center 70%;
-		h1 {
-			font-family: trajan-pro-3, trajan-pro, "Trajan Pro 3", system-ui, -apple-system, sans-serif;
-			font-weight: 400;
-		}
+#slim-hero.navbar {
+	min-height: 100dvh;
+	&.compact-hero {
+		min-height: 33dvh;
 	}
+	background-image: url(../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17-c.jpg);
+	background-size: cover;
+	background-blend-mode: unset; 
+	background-color: rgb(108, 117, 125) !important;
+	background-position: center 70%;
+	h1 {
+		font-family: trajan-pro-3, trajan-pro, "Trajan Pro 3", system-ui, -apple-system, sans-serif;
+		font-weight: 400;
+	}
+}
+@media (min-width: 768px) {
+    #oe-sidebar.toc-overlay-md {
+        z-index: 99;
+        position: absolute;
+        top: 3rem;
+    }
 }
 #primary {
 	scroll-margin-top: 40px;

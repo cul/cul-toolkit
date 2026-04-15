@@ -57,6 +57,7 @@ const pageData = {
     stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss'],
     adobeFontsKit: 'uhm4ygw',
 	adobeFonts: true,
+	tocOpen: false,
   },
   '/examples/online_exhibitions-individual_home.html': {
     title: 'cul-toolkit &raquo; examples &raquo; CUL Online Exhibitions Individual Home',
@@ -65,14 +66,18 @@ const pageData = {
     stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss'],
     adobeFontsKit: 'uhm4ygw',
 	adobeFonts: true,
+	tocOpen: true,
   },
   '/examples/online_exhibitions-standard_page.html': {
     title: 'cul-toolkit &raquo; examples &raquo; CUL Online Exhibitions Standard Page',
     whichHero: '_online-exhibitions-hero',
+	compactHero: true,
     heroTitle: 'Roar, Lion, Roar!',
-    stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss', '_online_exhibitions-standard_page.scss'],
+    stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss'],
     adobeFontsKit: 'uhm4ygw',
 	adobeFonts: true,
+	tocOpen: false,
+	tocOverlay: true,
   },
 };
 

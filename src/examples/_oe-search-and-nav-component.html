@@ -6,10 +6,10 @@
 						<i class="fal fa-times"></i>
 					</button>
 				</form>
-				<button class="toc-toggler d-md-none btn btn-outline-secondary border-0 flex-shrink-0" type="button" data-bs-toggle="collapse" data-bs-target="#oe-sidebar" aria-controls="oe-sidebar" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-light fa-list"></i>
+				<button class="{{#if tocOpen}}d-md-none{{/if}} btn btn-outline-secondary border-0 flex-shrink-0" type="button" data-bs-toggle="collapse" data-bs-target="#oe-sidebar" aria-controls="oe-sidebar" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-light fa-list"></i>
 				</button>
               </div>
-                <div id="oe-sidebar" class="collapse navbar-collapse d-md-block">
+                <div id="oe-sidebar" class="collapse {{#if tocOpen}}d-md-block{{/if}} {{#if tocOverlay}}toc-overlay-md{{/if}}">
 							<a href="online_exhibitions-standard_page.html" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
 
 									<div class="d-flex gap-2 w-100 justify-content-between">
