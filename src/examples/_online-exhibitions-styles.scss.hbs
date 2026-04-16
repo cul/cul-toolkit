@@ -10,7 +10,10 @@
 	&.compact-hero {
 		min-height: 33dvh;
 	}
-	background-image: url(../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17-c.jpg);
+	background-image: image-set(
+		url("../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17-c.webp") type("image/webp"),
+		url("../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17-c.jpg") type("image/jpeg")
+	);
 	background-size: cover;
 	background-blend-mode: unset; 
 	background-color: rgb(108, 117, 125) !important;
