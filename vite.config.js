@@ -156,7 +156,7 @@ export default defineConfig({
         onlineExhibitionsSiteHome: resolve(__dirname, 'src/examples/online_exhibitions-site_home.html'),
         onlineExhibitionsIndividualHome: resolve(__dirname, 'src/examples/online_exhibitions-individual_home.html'),
         onlineExhibitionsStandardPage: resolve(__dirname, 'src/examples/online_exhibitions-standard_page.html'),
-        onlineExhibitionsStandardPage: resolve(__dirname, 'src/examples/online_exhibitions-standard_page_leaf.html'),
+        onlineExhibitionsStandardPageLeaf: resolve(__dirname, 'src/examples/online_exhibitions-standard_page_leaf.html'),
       },
       output: {
         //entryFileNames: `assets/[name].js`,
