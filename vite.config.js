@@ -79,6 +79,17 @@ const pageData = {
 	tocOpen: false,
 	tocOverlay: true,
   },
+  '/examples/online_exhibitions-standard_page_leaf.html': {
+    title: 'cul-toolkit &raquo; examples &raquo; CUL Online Exhibitions Standard Page Leaf',
+    whichHero: '_online-exhibitions-hero',
+	compactHero: true,
+    heroTitle: 'Roar, Lion, Roar!',
+    stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss'],
+    adobeFontsKit: 'uhm4ygw',
+	adobeFonts: true,
+	tocOpen: false,
+	tocOverlay: true,
+  },
 };
 
 const decodeHtml = (html) => {
@@ -145,6 +156,7 @@ export default defineConfig({
         onlineExhibitionsSiteHome: resolve(__dirname, 'src/examples/online_exhibitions-site_home.html'),
         onlineExhibitionsIndividualHome: resolve(__dirname, 'src/examples/online_exhibitions-individual_home.html'),
         onlineExhibitionsStandardPage: resolve(__dirname, 'src/examples/online_exhibitions-standard_page.html'),
+        onlineExhibitionsStandardPage: resolve(__dirname, 'src/examples/online_exhibitions-standard_page_leaf.html'),
       },
       output: {
         //entryFileNames: `assets/[name].js`,
