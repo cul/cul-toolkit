@@ -8,11 +8,11 @@
 
 				<!--Begin: breadcrumb_bar component -->
 				<nav id="breadcrumb_bar" class="cul-breadcrumb_bar" style="--bs-breadcrumb-divider: '&gt;';"
-					aria-label="breadcrumb">
+																	aria-label="breadcrumb">
 					<ol class="breadcrumb mb-md-0 justify-content-center justify-content-md-start">
 						<li class="breadcrumb-item">
 							<a title="Online Exhibitions Home" href="online_exhibitions-site_home.html"
-								aria-label="Online Exhibitions Home">Online Exhibitions</a>
+															   aria-label="Online Exhibitions Home">Online Exhibitions</a>
 						</li>
 						<li class="breadcrumb-item" aria-current="page">
 							<a href="online_exhibitions-individual_home.html">Roar, Lion, Roar!</a>
@@ -34,38 +34,41 @@
 	</div>
 </div>
 
-<main id="primary">
-	<div class="container col-xxl-8 px-4 py-3">
-		<div class="row flex-md-row-reverse justify-content-center align-items-top g-5 py-5">
+<div class="container col-xxl-8 px-4 py-3">
+	<div class="row flex-md-row-reverse justify-content-center align-items-top g-5 py-5">
 
-			<div class="col-12 col-md-4 mt-0 mt-md-5">
-				<nav class="navbar navbar-expand-md">
-					<div class="w-100">
-						<div class="d-flex w-100 justify-content-center">
-							<span class="navbar-brand d-md-none">Explore this Exhibition</span>
-							<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-								data-bs-target="#sidebarPagesContent" aria-controls="sidebarPagesContent"
-								aria-expanded="false" aria-label="Toggle navigation">
-								<span class="navbar-toggler-icon"></span>
-							</button>
-						</div>
-						<div class="collapse navbar-collapse" id="sidebarPagesContent">
+		<aside class="col-12 col-md-4 mt-0 mt-md-5">
+			<hr class="d-md-none border-primary">
+			<div class="navbar navbar-light justify-content-center">
+				<span class="navbar-brand d-md-none">Explore the Exhibition</span>
+				<button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" 
+																	   data-bs-target="#asideSidebar" 
+																	   aria-controls="asideSidebar" 
+																	   aria-expanded="false" 
+																	   aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+			<div class="collapse d-md-block" id="asideSidebar">
+				<nav class="navbar navbar-light navbar-expand-md">
+					<div class="w100">
+						<div class="w100" id="sidebarPagesContent">
 							<ul class="list-unstyled w-100">
 								<li class="" id="early-days-menu">
 									<div class="btn-group justify-content-left align-items-center">
 										<button
-											class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-											data-bs-toggle="collapse" data-bs-target="#early-days-collapse"
-											aria-expanded="false"></button>
+												class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+												data-bs-toggle="collapse" data-bs-target="#early-days-collapse"
+																		  aria-expanded="false"></button>
 										<a class="btn btn-link d-inline-flex align-items-center ps-0 collapsed"
-											href="#">Early Days</a>
+										   href="#">Early Days</a>
 									</div>
 									<div id="early-days-collapse" class="collapse">
 										<ul class="btn-toggle-nav list-unstyled fw-normal ps-4 pb-1">
 											<li>
 												<a class="d-block"
-													href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/early-days/the-ban">The
-													Ban</a>
+												   href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/early-days/the-ban">The
+												   Ban</a>
 											</li>
 										</ul>
 									</div>
@@ -73,60 +76,60 @@
 								<li class="" id="glory-days-menu">
 									<div class="btn-group justify-content-left align-items-center">
 										<button
-											class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-											data-bs-toggle="collapse" data-bs-target="#glory-days-collapse"
-											aria-expanded="false"></button>
+												class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+												data-bs-toggle="collapse" data-bs-target="#glory-days-collapse"
+																		  aria-expanded="false"></button>
 										<a class="btn btn-link d-inline-flex align-items-center ps-0 collapsed"
-											href="#">Glory Days</a>
+										   href="#">Glory Days</a>
 									</div>
 									<div id="glory-days-collapse" class="collapse">
 										<ul class="btn-toggle-nav list-unstyled fw-normal ps-4 pb-1">
 											<li><a class="d-block"
-													href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/glory-days/rose-bowl">Rose
-													Bowl Game, 1934</a></li>
+												   href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/glory-days/rose-bowl">Rose
+												   Bowl Game, 1934</a></li>
 											<li><a class="d-block"
-													href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/glory-days/miracle">Miracle
-													on Morningside, 1947</a></li>
+												   href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/glory-days/miracle">Miracle
+												   on Morningside, 1947</a></li>
 											<li><a class="d-block"
-													href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/glory-days/ivy-league-1961">Ivy
-													League Co-Champions, 1961</a></li>
+												   href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/glory-days/ivy-league-1961">Ivy
+												   League Co-Champions, 1961</a></li>
 										</ul>
 									</div>
 								</li>
 								<li class="" id="recent-days-menu">
 									<div class="btn-group justify-content-left align-items-center">
 										<button
-											class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-											data-bs-toggle="collapse" data-bs-target="#recent-days-collapse"
-											aria-expanded="false"></button>
+												class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+												data-bs-toggle="collapse" data-bs-target="#recent-days-collapse"
+																		  aria-expanded="false"></button>
 										<a class="btn btn-link d-inline-flex align-items-center ps-0 collapsed"
-											href="#">Recent Days</a>
+										   href="#">Recent Days</a>
 									</div>
 									<div id="recent-days-collapse" class="collapse">
 										<ul class="btn-toggle-nav list-unstyled fw-normal ps-4 pb-1">
 											<li><a class="d-block"
-													href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/recent-days/campbell">Coach
-													Bill Campbell and the 1970s</a></li>
+												   href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/recent-days/campbell">Coach
+												   Bill Campbell and the 1970s</a></li>
 											<li><a class="d-block"
-													href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/recent-days/the-streak">The
-													Streak, 1980s</a></li>
+												   href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/recent-days/the-streak">The
+												   Streak, 1980s</a></li>
 											<li><a class="d-block"
-													href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/recent-days/1996">1996
-													Football Team</a></li>
+												   href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/recent-days/1996">1996
+												   Football Team</a></li>
 											<li><a class="d-block"
-													href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/recent-days/bagnoli">Coach
-													Al Bagnoli</a></li>
+												   href="https://exhibitions.library.columbia.edu/exhibits/show/roar-lion-roar/recent-days/bagnoli">Coach
+												   Al Bagnoli</a></li>
 										</ul>
 									</div>
 								</li>
 								<li class="" id="people-menu">
 									<div class="btn-group justify-content-left align-items-center">
 										<button
-											class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-											data-bs-toggle="collapse" data-bs-target="#people-collapse"
-											aria-expanded="true"></button>
+												class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+												data-bs-toggle="collapse" data-bs-target="#people-collapse"
+																		  aria-expanded="true"></button>
 										<a class="btn btn-link d-inline-flex align-items-center ps-0 collapsed"
-											href="#">People</a>
+										   href="#">People</a>
 									</div>
 									<div id="people-collapse" class="collapse show">
 										<ul class="btn-toggle-nav list-unstyled fw-normal mt-0 ps-4 pb-1">
@@ -134,30 +137,30 @@
 											<li>
 												<div class="btn-group justify-content-left align-items-center">
 													<button
-														class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
-														data-bs-toggle="collapse"
-														data-bs-target="#people-coaches-collapse"
-														aria-expanded="false"></button>
+															class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
+															data-bs-toggle="collapse"
+															data-bs-target="#people-coaches-collapse"
+															aria-expanded="false"></button>
 													<a class="btn btn-link d-inline-flex align-items-center ps-0"
-														href="/exhibits/show/roar-lion-roar/people/coaches">Coaches</a>
+													   href="/exhibits/show/roar-lion-roar/people/coaches">Coaches</a>
 												</div>
 												<div id="people-coaches-collapse" class="collapse">
 													<ul class="list-unstyled ps-4">
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/coaches/little">Lou
-																Little</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/coaches/little">Lou
+															   Little</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/coaches/donelli">Aldo
-																"Buff" Donelli</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/coaches/donelli">Aldo
+															   "Buff" Donelli</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/coaches/campbell">Bill
-																Campbell</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/coaches/campbell">Bill
+															   Campbell</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/coaches/tellier">Ray
-																Tellier</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/coaches/tellier">Ray
+															   Tellier</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/coaches/bagnoli">Al
-																Bagnoli</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/coaches/bagnoli">Al
+															   Bagnoli</a></li>
 													</ul>
 												</div>
 											</li>
@@ -165,31 +168,31 @@
 											<li>
 												<div class="btn-group justify-content-left align-items-center">
 													<button
-														class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
-														data-bs-toggle="collapse"
-														data-bs-target="#people-players-1-collapse"
-														aria-expanded="false"></button>
+															class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
+															data-bs-toggle="collapse"
+															data-bs-target="#people-players-1-collapse"
+															aria-expanded="false"></button>
 													<a class="btn btn-link d-inline-flex align-items-center ps-0"
-														href="/exhibits/show/roar-lion-roar/people/1920">Players
-														1920s-1930s</a>
+													   href="/exhibits/show/roar-lion-roar/people/1920">Players
+													   1920s-1930s</a>
 												</div>
 												<div id="people-players-1-collapse" class="collapse">
 													<ul class="list-unstyled ps-4">
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1920/gehrig">Lou
-																Gehrig</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1920/gehrig">Lou
+															   Gehrig</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1920/koppisch">Walter
-																Koppisch</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1920/koppisch">Walter
+															   Koppisch</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1920/montgomery">Cliff
-																Montgomery</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1920/montgomery">Cliff
+															   Montgomery</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1920/barabas">Al
-																Barabas</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1920/barabas">Al
+															   Barabas</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1920/luckman">Sid
-																Luckman</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1920/luckman">Sid
+															   Luckman</a></li>
 													</ul>
 												</div>
 											</li>
@@ -197,31 +200,31 @@
 											<li>
 												<div class="btn-group justify-content-left align-items-center">
 													<button
-														class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
-														data-bs-toggle="collapse"
-														data-bs-target="#people-players-2-collapse"
-														aria-expanded="true"></button>
+															class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
+															data-bs-toggle="collapse"
+															data-bs-target="#people-players-2-collapse"
+															aria-expanded="true"></button>
 													<a class="btn btn-link d-inline-flex align-items-center ps-0"
-														href="/exhibits/show/roar-lion-roar/people/1940">Players
-														1940s-1950s</a>
+													   href="/exhibits/show/roar-lion-roar/people/1940">Players
+													   1940s-1950s</a>
 												</div>
 												<div id="people-players-2-collapse" class="collapse show">
 													<ul class="list-unstyled ps-4">
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1940/governali">Paul
-																Governali</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1940/governali">Paul
+															   Governali</a></li>
 														<li><a class="d-block bg-body-tertiary text-success"
-																href="/exhibits/show/roar-lion-roar/people/1940/kerouac">Jack
-																Kerouac</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1940/kerouac">Jack
+															   Kerouac</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1940/swiacki">Bill
-																Swiacki</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1940/swiacki">Bill
+															   Swiacki</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1940/kusserow">Lou
-																Kusserow</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1940/kusserow">Lou
+															   Kusserow</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1940/rossides">Gene
-																Rossides</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1940/rossides">Gene
+															   Rossides</a></li>
 													</ul>
 												</div>
 											</li>
@@ -229,28 +232,28 @@
 											<li>
 												<div class="btn-group justify-content-left align-items-center">
 													<button
-														class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
-														data-bs-toggle="collapse"
-														data-bs-target="#people-players-3-collapse"
-														aria-expanded="false"></button>
+															class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
+															data-bs-toggle="collapse"
+															data-bs-target="#people-players-3-collapse"
+															aria-expanded="false"></button>
 													<a class="btn btn-link d-inline-flex align-items-center ps-0"
-														href="/exhibits/show/roar-lion-roar/people/1960">Players
-														1960s-2000s</a>
+													   href="/exhibits/show/roar-lion-roar/people/1960">Players
+													   1960s-2000s</a>
 												</div>
 												<div id="people-players-3-collapse" class="collapse">
 													<ul class="list-unstyled ps-4">
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1960/bill_campbell">Bill
-																Campbell</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1960/bill_campbell">Bill
+															   Campbell</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1960/kaliades">Paul
-																Kaliades</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1960/kaliades">Paul
+															   Kaliades</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1960/witkowski">John
-																Witkowski</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1960/witkowski">John
+															   Witkowski</a></li>
 														<li><a class="d-block"
-																href="/exhibits/show/roar-lion-roar/people/1960/reese">Johnathan
-																Reese</a></li>
+															   href="/exhibits/show/roar-lion-roar/people/1960/reese">Johnathan
+															   Reese</a></li>
 													</ul>
 												</div>
 											</li>
@@ -262,26 +265,26 @@
 								<li class="" id="places-menu">
 									<div class="btn-group justify-content-left align-items-center">
 										<button
-											class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-											data-bs-toggle="collapse" data-bs-target="#places-collapse"
-											aria-expanded="false"></button>
+												class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+												data-bs-toggle="collapse" data-bs-target="#places-collapse"
+																		  aria-expanded="false"></button>
 										<a class="btn btn-link d-inline-flex align-items-center ps-0 collapsed"
-											href="#">Places</a>
+										   href="#">Places</a>
 									</div>
 									<div id="places-collapse" class="collapse">
 										<ul class="btn-toggle-nav list-unstyled fw-normal ps-4 pb-1">
 											<li><a class="d-block"
-													href="/exhibits/show/roar-lion-roar/places/south-field">South
-													Field</a></li>
+												   href="/exhibits/show/roar-lion-roar/places/south-field">South
+												   Field</a></li>
 											<li><a class="d-block"
-													href="/exhibits/show/roar-lion-roar/places/baker-field">Baker
-													Field</a></li>
+												   href="/exhibits/show/roar-lion-roar/places/baker-field">Baker
+												   Field</a></li>
 											<li><a class="d-block"
-													href="/exhibits/show/roar-lion-roar/places/wien-stadium">Wien
-													Stadium</a></li>
+												   href="/exhibits/show/roar-lion-roar/places/wien-stadium">Wien
+												   Stadium</a></li>
 											<li><a class="d-block"
-													href="/exhibits/show/roar-lion-roar/places/csc">Campbell Sports
-													Center</a></li>
+												   href="/exhibits/show/roar-lion-roar/places/csc">Campbell Sports
+												   Center</a></li>
 										</ul>
 									</div>
 								</li>
@@ -289,25 +292,25 @@
 								<li class="" id="games-menu">
 									<div class="btn-group justify-content-left align-items-center">
 										<button
-											class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-											data-bs-toggle="collapse" data-bs-target="#games-collapse"
-											aria-expanded="false"></button>
+												class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+												data-bs-toggle="collapse" data-bs-target="#games-collapse"
+																		  aria-expanded="false"></button>
 										<a class="btn btn-link d-inline-flex align-items-center ps-0 collapsed"
-											href="#">Games</a>
+										   href="#">Games</a>
 									</div>
 									<div id="games-collapse" class="collapse">
 										<ul class="btn-toggle-nav list-unstyled fw-normal ps-4 pb-1">
 											<li><a class="d-block"
-													href="/exhibits/show/roar-lion-roar/games/cheerleaders">Cheerleaders</a>
+												   href="/exhibits/show/roar-lion-roar/games/cheerleaders">Cheerleaders</a>
 											</li>
 											<li><a class="d-block"
-													href="/exhibits/show/roar-lion-roar/games/homecoming">Homecoming</a>
+												   href="/exhibits/show/roar-lion-roar/games/homecoming">Homecoming</a>
 											</li>
 											<li><a class="d-block"
-													href="/exhibits/show/roar-lion-roar/games/mascots">Mascots</a></li>
+												   href="/exhibits/show/roar-lion-roar/games/mascots">Mascots</a></li>
 											<li><a class="d-block"
-													href="/exhibits/show/roar-lion-roar/games/roar-lion-roar">Roar,
-													Lion, Roar</a></li>
+												   href="/exhibits/show/roar-lion-roar/games/roar-lion-roar">Roar,
+												   Lion, Roar</a></li>
 										</ul>
 									</div>
 								</li>
@@ -315,11 +318,11 @@
 								<li class="" id="artwork-menu">
 									<div class="btn-group justify-content-left align-items-center">
 										<button
-											class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed invisible"
-											data-bs-toggle="collapse" disabled data-bs-target="#artwork-collapse"
-											aria-expanded="false"></button>
+												class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed invisible"
+												data-bs-toggle="collapse" disabled data-bs-target="#artwork-collapse"
+																				   aria-expanded="false"></button>
 										<a class="btn btn-link d-inline-flex align-items-center ps-0 collapsed"
-											href="#">Artwork</a>
+										   href="#">Artwork</a>
 									</div>
 								</li>
 
@@ -327,96 +330,103 @@
 						</div>
 					</div>
 				</nav>
-
+				<hr>
+				<div class="p-3">
+					<h2 class="h6">Heading 2 (.h6)</h2>
+					<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</p>
+				</div>
 			</div>
-			<div class="col-12 col-md-8">
-				<h2>Jack Kerouac, CC 1944</h2>
-				<p class="lead">Jack Kerouac came to Columbia in 1940 on a football scholarship. Unfortunately, the
-					all-Massachusetts State player in high school suffered a broken leg in only his second game of his
-					freshman year. In a memoir by C. Ogden Beresford (CC 1943)&nbsp;<a
-						href="https://findingaids.library.columbia.edu/ead/nnc-ua/ldpd_13484020">available at the
-						University Archives</a>, there is a first-person account of Kerouac after the tragic accident.
-					Oggie, as he was known, recalled the freshman who shared a connecting room in Livingston Hall (now
-					Wallach Hall) with his friend Jimmy Crump:</p>
-				<div class="col-md-8 mx-auto">
-					<div class="mb-4">
+			<hr class="d-md-none border-primary">
+		</aside>
 
-						<div class="card h-100 w-100">
-							<div class="bg-dark d-flex align-items-center justify-content-center">
-								<a
+
+		<main id="primary" class="col-12 col-md-8">
+			<h2>Jack Kerouac, CC 1944</h2>
+			<p class="lead">Jack Kerouac came to Columbia in 1940 on a football scholarship. Unfortunately, the
+			all-Massachusetts State player in high school suffered a broken leg in only his second game of his
+			freshman year. In a memoir by C. Ogden Beresford (CC 1943)&nbsp;<a
+																					href="https://findingaids.library.columbia.edu/ead/nnc-ua/ldpd_13484020">available at the
+																					University Archives</a>, there is a first-person account of Kerouac after the tragic accident.
+																				Oggie, as he was known, recalled the freshman who shared a connecting room in Livingston Hall (now
+																				Wallach Hall) with his friend Jimmy Crump:</p>
+			<div class="col-md-8 mx-auto">
+				<div class="mb-4">
+
+					<div class="card h-100 w-100">
+						<div class="bg-dark d-flex align-items-center justify-content-center">
+							<a
 									href="https://exhibitions.library.columbia.edu/files/original/b082e04cc1bffe77400645f9e6fce291.jpg">
-									<img src="https://exhibitions.library.columbia.edu/files/fullsize/b3ba6c5e7530187a96f908e824e46ae6.jpg"
-										class="img-fluid d-block" alt="">
-								</a>
-							</div>
-							<div class="card-body d-flex flex-column">
-								<h5 class="card-title">Jack Kerouac, CC 1944</h5>
-								<p class="card-text">
-									Jack Kerouac in Columbia Football uniform as a reserve player, 1942
-								</p>
-							</div>
+								<img src="https://exhibitions.library.columbia.edu/files/fullsize/b3ba6c5e7530187a96f908e824e46ae6.jpg"
+									 class="img-fluid d-block" alt="">
+							</a>
+						</div>
+						<div class="card-body d-flex flex-column">
+							<h5 class="card-title">Jack Kerouac, CC 1944</h5>
+							<p class="card-text">
+							Jack Kerouac in Columbia Football uniform as a reserve player, 1942
+							</p>
+						</div>
 
-							<div class="card-menu-button mt-auto small text-body-secondary ms-auto">
-								<div class="dropdown dropstart">
-									<button class="btn btn-sm btn-link text-body-secondary" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										<i class="fa-light fa-circle-ellipsis fa-beat"></i>
-									</button>
-									<ul class="dropdown-menu border-4">
-										<li>
-											<h6 class="dropdown-header border-bottom">More info:</h6>
-										</li>
-										<li><a class="dropdown-item" href="#">Learn more about this item</a></li>
-										<li><a class="dropdown-item" href="#">View high resolution</a></li>
-										<li><a class="dropdown-item" href="#">View in DLC</a></li>
-									</ul>
-								</div>
+						<div class="card-menu-button mt-auto small text-body-secondary ms-auto">
+							<div class="dropdown dropstart">
+								<button class="btn btn-sm btn-link text-body-secondary" type="button"
+																						data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa-light fa-circle-ellipsis fa-beat"></i>
+								</button>
+								<ul class="dropdown-menu border-4">
+									<li>
+										<h6 class="dropdown-header border-bottom">More info:</h6>
+									</li>
+									<li><a class="dropdown-item" href="#">Learn more about this item</a></li>
+									<li><a class="dropdown-item" href="#">View high resolution</a></li>
+									<li><a class="dropdown-item" href="#">View in DLC</a></li>
+								</ul>
 							</div>
-
 						</div>
 
 					</div>
 
 				</div>
-				<div class="row row-cols-2 g-4 align-items-stretch">
 
-					<div class="col-12">
-						<blockquote class="blockquote fs-6 border-start ps-3">
-							<p>"Jack was supposed to be some hotshot football player from some Academy in Massachusetts,
-								and about two weeks into the fall Freshman football season, Jack broke his leg. Well,
-								that finished Mr. Kerouac. He bemoaned his fate, lay on his back in his sack all day,
-								wouldn't attend classes, and just stared at the ceiling. Jim and I and several other
-								guys all tried to pull this kid out of it, but he would turn on his side, close his
-								eyes, and refuse to talk. [Football Coach] Lou Little paid several visits, and finally
-								took Jim and me aside, and said for Christ's sake, and for Columbia's sake, help this
-								kid get over his pout, he's going to flunk out and there goes a good football player. So
-								we did. We asked him to eat with us, go to the movies with us, — nothing. Lou Little
-								would come in, shut the door, and the walls would tremble – nothing. I don't know what
-								he lived on, but he wouldn't take his finals at the end of the first term, and although
-								he came back to start the second term, he dropped out after a couple of weeks, and that
-								was the end of Jack Kerouac. It was a downer for everyone."</p>
-						</blockquote>
-						<p>After his freshman year, Kerouac did not come&nbsp; back to Columbia for what would
-								have been his first varsity season. Instead, Kerouac took a job in a New England war
-								plant that fall. In fall 1942, Kerouac was back in school, he joined Coach Lou Little's
-								varsity squad as a part of Columbia's reserve backfield, but he did not play in any
-								games.</p>
-					</div>
+			</div>
+			<div class="row row-cols-2 g-4 align-items-stretch">
 
-
-
-
-
-
+				<div class="col-12">
+					<blockquote class="blockquote fs-6 border-start ps-3">
+						<p>"Jack was supposed to be some hotshot football player from some Academy in Massachusetts,
+						and about two weeks into the fall Freshman football season, Jack broke his leg. Well,
+						that finished Mr. Kerouac. He bemoaned his fate, lay on his back in his sack all day,
+						wouldn't attend classes, and just stared at the ceiling. Jim and I and several other
+						guys all tried to pull this kid out of it, but he would turn on his side, close his
+						eyes, and refuse to talk. [Football Coach] Lou Little paid several visits, and finally
+						took Jim and me aside, and said for Christ's sake, and for Columbia's sake, help this
+						kid get over his pout, he's going to flunk out and there goes a good football player. So
+						we did. We asked him to eat with us, go to the movies with us, — nothing. Lou Little
+						would come in, shut the door, and the walls would tremble – nothing. I don't know what
+						he lived on, but he wouldn't take his finals at the end of the first term, and although
+						he came back to start the second term, he dropped out after a couple of weeks, and that
+						was the end of Jack Kerouac. It was a downer for everyone."</p>
+					</blockquote>
+					<p>After his freshman year, Kerouac did not come&nbsp; back to Columbia for what would
+					have been his first varsity season. Instead, Kerouac took a job in a New England war
+					plant that fall. In fall 1942, Kerouac was back in school, he joined Coach Lou Little's
+					varsity squad as a part of Columbia's reserve backfield, but he did not play in any
+					games.</p>
 				</div>
+
+
+
+
+
 
 			</div>
 
-		</div>
-
-
 	</div>
-</main>
+
+</div>
+</div>
 
 {{> _online-exhibitions-fat-footer }}
 
