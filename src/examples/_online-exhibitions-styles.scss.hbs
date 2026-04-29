@@ -112,4 +112,19 @@
 }
 /* END CAROUSEL REWORK */
 
+/* TOC MENU */
+#oe-sidebar .list-group-item > .d-flex > .btn-toggle::before {
+  content: none;
+}
+#oe-sidebar .btn-toggle svg {
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+
+#oe-sidebar .btn-toggle:not(.collapsed) svg {
+  transform: rotate(90deg);
+}
+
+/* END TOC MENU */
+
 </style>
