@@ -1,0 +1,130 @@
+<style>
+#site-hero,#slim-hero {
+	h1 {
+		font-family: trajan-pro-3, trajan-pro, "Trajan Pro 3", system-ui, -apple-system, sans-serif;
+		font-weight: 400;
+		a.text-white {
+			text-shadow: 1px 1px 0 #000;
+		}
+	}
+}
+#slim-hero.navbar {
+	min-height: 100dvh;
+	&.compact-hero {
+		min-height: 33dvh;
+	}
+	background-image: image-set(
+		url("../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17-c.webp") type("image/webp"),
+		url("../assets/examples/roar_lion_roar-ef89b5cd0240bab87169c5000be24e17-c.jpg") type("image/jpeg")
+	);
+	background-size: cover;
+	background-blend-mode: unset; 
+	background-color: rgb(108, 117, 125) !important;
+	background-position: center 70%;
+	h1 {
+		font-family: trajan-pro-3, trajan-pro, "Trajan Pro 3", system-ui, -apple-system, sans-serif;
+		font-weight: 400;
+	}
+}
+@media (min-width: 768px) {
+    #oe-sidebar.toc-overlay-md {
+        z-index: 99;
+        position: absolute;
+        top: 3rem;
+    }
+}
+#primary {
+	scroll-margin-top: 40px;
+}
+
+/* REWORK old LWEB CAROUSEL CSS */
+@media (min-width: 576px) {
+	.cul-collections_carousel .carousel-control-next,
+	.cul-collections_carousel .carousel-control-prev {
+        width: 8%;
+    }
+}
+
+.cul-collections_carousel .carousel-inner {
+    overflow: visible;
+}
+
+@media (min-width: 768px) {
+    .cul-collections_carousel .carousel-inner {
+        overflow: hidden;
+    }
+}
+
+.cul-collections_carousel .carousel-item,
+.cul-collections_carousel .carousel-item .card {
+    height: 400px;
+}
+
+.cul-collections_carousel .carousel-item,
+.cul-collections_carousel .carousel-item .card,
+.cul-collections_carousel .carousel-item .card-body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-shadow: var(--text-shadow-color);
+}
+
+.cul-collections_carousel .card-body a {
+    -moz-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    -webkit-transition: background-color .2s;
+    transition: background-color .2s;
+	text-decoration:none;
+}
+
+.cul-collections_carousel .card-body a:hover {
+    background-color: rgba(0,0,0,.75);
+    text-decoration: none;
+}
+
+.cul-collections_carousel .carousel-item .card {
+    border-radius:0;
+    height: 100%;
+}
+
+.cul-collections_carousel .carousel-item .card-title {
+    margin-bottom: 0;
+}
+
+.cul-collections_carousel .carousel-item .card-body a,
+.cul-collections_carousel .carousel-caption {
+    color: white;
+    text-shadow: var(--text-shadow-color);
+}
+
+.cul-collections_carousel .card-body a:hover .carousel-caption {
+    text-decoration: none;
+}
+
+.cul-collections_carousel .carousel-item .card-text {
+    font-size: .9rem;
+}
+
+.cul-collections_carousel .carousel-control-prev, 
+.cul-collections_carousel .carousel-control-next {
+	top: 45%;
+	bottom: unset;
+}
+/* END CAROUSEL REWORK */
+
+/* TOC MENU */
+#oe-sidebar .list-group-item > .d-flex > .btn-toggle::before {
+  content: none;
+}
+#oe-sidebar .btn-toggle svg {
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+
+#oe-sidebar .btn-toggle:not(.collapsed) svg {
+  transform: rotate(90deg);
+}
+
+/* END TOC MENU */
+
+</style>

@@ -1,0 +1,387 @@
+<div class="list-group my-md-4 position-relative flex-fill">
+	<div class="d-flex gap-2 mb-1 align-items-center">
+		<form data-id="staffweb-search-form" class="d-flex flex-grow-1 position-relative" role="search" method="get"
+			action="https://staffweb.library.columbia.edu/search.html">
+			<input required="" class="py-2 w-100 form-control border border-info fs-6 rounded-pill " type="search"
+				aria-label="Search StaffWeb" placeholder="🔍 Search Exhibition…" name="q" data-id="staffwebsearch"
+				tabindex="1">
+			<button style="position:absolute;right:0.3em;" type="reset" title="Clear the query"
+				class="btn btn-link fs-5 text-body-tertiary" aria-label="Clear the query">
+				<i class="fal fa-times"></i>
+			</button>
+		</form>
+		<button class="{{#if tocOpen}}d-md-none{{/if}} btn btn-outline-secondary border-0 flex-shrink-0" type="button"
+			data-bs-toggle="collapse" data-bs-target="#oe-sidebar" aria-controls="oe-sidebar" aria-expanded="false"
+			aria-label="Toggle Table of Contents navigation" title="Table of Contents"><i class="fa-light fa-list"></i>
+		</button>
+	</div>
+	<div id="oe-sidebar"
+		class="bg-white collapse {{#if tocOpen}}d-md-block{{/if}} {{#if tocOverlay}}toc-overlay-md{{/if}}">
+
+		<div class="list-group-item">
+
+			<div class="d-flex gap-3 align-items-start">
+
+				<!-- section link -->
+				<a href="online_exhibitions-standard_page.html" class="flex-grow-1 text-decoration-none">
+
+					<h6 class="mb-1">Early Days</h6>
+					<p class="mb-0 opacity-75">
+						Columbia played its first football game, only the fourth intercollegiate contest in the history
+						of the sport...
+					</p>
+
+				</a>
+
+				<!-- control -->
+				<button class="btn btn-toggle awesome py-2 border-0 collapsed" data-bs-toggle="collapse"
+					data-bs-target="#early-days-collapse" aria-expanded="false" aria-controls="early-days-collapse"
+					aria-label="Toggle subsection"><i class="fa-duotone fa-solid fa-chevrons-right"></i>
+				</button>
+
+			</div>
+
+			<!-- collapse -->
+			<div id="early-days-collapse" class="collapse mt-2">
+				<ul class="list-unstyled ps-3 mb-0">
+					<li>
+						<a href="https://exhibitions.library.columbia.edu/exhibits/show/x-x-x/early-days/the-ban">
+							The Ban
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="list-group-item">
+
+			<div class="d-flex gap-3 align-items-start">
+
+				<!-- section link -->
+				<a href="online_exhibitions-standard_page.html" class="flex-grow-1 text-decoration-none">
+
+					<h6 class="mb-1">Glory Days</h6>
+					<p class="mb-0 opacity-75">
+						During the Glory Days of Columbia Football under legendary Coach Lou Little...
+					</p>
+
+				</a>
+
+				<!-- control -->
+				<button class="btn btn-toggle py-2 border-0 collapsed" data-bs-toggle="collapse"
+					data-bs-target="#glory-days-collapse" aria-expanded="false" aria-controls="glory-days-collapse"
+					aria-label="Toggle subsection"><i class="fa-duotone fa-solid fa-chevrons-right"></i>
+				</button>
+
+			</div>
+
+			<!-- collapse -->
+			<div id="glory-days-collapse" class="collapse mt-2">
+				<ul class="list-unstyled ps-3 mb-0">
+					<li>
+						<a href="/exhibits/show/roar-lion-roar/glory-days/rose-bowl">
+							Rose Bowl Game, 1934
+						</a>
+					</li>
+					<li>
+						<a href="/exhibits/show/roar-lion-roar/glory-days/miracle">
+							Miracle on Morningside, 1947
+						</a>
+					</li>
+					<li>
+						<a href="/exhibits/show/roar-lion-roar/glory-days/ivy-league-1961">
+							Ivy League Co-Champions, 1961
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="list-group-item">
+
+			<div class="d-flex gap-3 align-items-start">
+
+				<!-- section link -->
+				<a href="#" class="flex-grow-1 text-decoration-none">
+
+					<h6 class="mb-1">Recent Days</h6>
+					<p class="mb-0 opacity-75">
+						This section highlights the last 50 years of Columbia Football.
+					</p>
+
+				</a>
+
+				<!-- control -->
+				<button class="btn btn-toggle py-2 border-0 collapsed" data-bs-toggle="collapse"
+					data-bs-target="#recent-days-collapse" aria-expanded="false" aria-controls="recent-days-collapse"
+					aria-label="Toggle subsection"><i class="fa-duotone fa-solid fa-chevrons-right"></i>
+				</button>
+
+			</div>
+
+			<!-- collapse -->
+			<div id="recent-days-collapse" class="collapse mt-2">
+				<ul class="list-unstyled ps-3 mb-0">
+					<li>
+						<a href="/exhibits/show/roar-lion-roar/recent-days/campbell">
+							Coach Bill Campbell and the 1970s
+						</a>
+					</li>
+					<li>
+						<a href="/exhibits/show/roar-lion-roar/recent-days/the-streak">
+							The Streak, 1980s
+						</a>
+					</li>
+					<li>
+						<a href="/exhibits/show/roar-lion-roar/recent-days/1996">
+							1996 Football Team
+						</a>
+					</li>
+					<li>
+						<a href="/exhibits/show/roar-lion-roar/recent-days/bagnoli">
+							Coach Al Bagnoli
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="list-group-item">
+
+			<div class="d-flex gap-3 align-items-start">
+
+				<!-- section link -->
+				<a href="online_exhibitions-standard_page_leaf.html" class="flex-grow-1 text-decoration-none">
+
+					<h6 class="mb-1">People</h6>
+					<p class="mb-0 opacity-75">
+						There have been many figures associated with Columbia Football over the
+						years...
+					</p>
+
+				</a>
+
+				<!-- control -->
+				<button class="btn btn-toggle py-2 border-0 collapsed" data-bs-toggle="collapse"
+					data-bs-target="#people-collapse" aria-expanded="false" aria-controls="people-collapse"
+					aria-label="Toggle subsection"><i class="fa-duotone fa-solid fa-chevrons-right"></i>
+				</button>
+
+			</div>
+
+			<!-- collapse -->
+			<div id="people-collapse" class="collapse mt-2">
+				<ul class="list-unstyled ps-0 mb-0">
+					<li>
+						<div class="btn-group justify-content-start align-items-center">
+							<button
+								class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
+								data-bs-toggle="collapse" data-bs-target="#people-coaches-collapse"
+								aria-expanded="false"></button>
+							<a class="btn btn-link d-inline-flex align-items-center ps-0"
+								href="/exhibits/show/roar-lion-roar/people/coaches">Coaches</a>
+						</div>
+						<div id="people-coaches-collapse" class="collapse">
+							<ul class="list-unstyled ps-5">
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/coaches/little">Lou
+										Little</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/coaches/donelli">Aldo
+										"Buff" Donelli</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/coaches/campbell">Bill
+										Campbell</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/coaches/tellier">Ray
+										Tellier</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/coaches/bagnoli">Al
+										Bagnoli</a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<div class="btn-group justify-content-start align-items-center">
+							<button
+								class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
+								data-bs-toggle="collapse" data-bs-target="#people-players-1-collapse"
+								aria-expanded="false"></button>
+							<a class="btn btn-link d-inline-flex align-items-center ps-0"
+								href="/exhibits/show/roar-lion-roar/people/1920">Players
+								1920s-1930s</a>
+						</div>
+						<div id="people-players-1-collapse" class="collapse">
+							<ul class="list-unstyled ps-5">
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1920/gehrig">Lou
+										Gehrig</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1920/koppisch">Walter
+										Koppisch</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1920/montgomery">Cliff
+										Montgomery</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1920/barabas">Al
+										Barabas</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1920/luckman">Sid
+										Luckman</a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<div class="btn-group justify-content-start align-items-center">
+							<button
+								class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
+								data-bs-toggle="collapse" data-bs-target="#people-players-2-collapse"
+								aria-expanded="false"></button>
+							<a class="btn btn-link d-inline-flex align-items-center ps-0"
+								href="/exhibits/show/roar-lion-roar/people/1940">Players
+								1940s-1950s</a>
+						</div>
+						<div id="people-players-2-collapse" class="collapse">
+							<ul class="list-unstyled ps-5">
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1940/governali">Paul
+										Governali</a></li>
+								<li><a href="online_exhibitions-standard_page_leaf.html" class="d-block" href="/exhibits/show/roar-lion-roar/people/1940/kerouac">Jack
+										Kerouac</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1940/swiacki">Bill
+										Swiacki</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1940/kusserow">Lou
+										Kusserow</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1940/rossides">Gene
+										Rossides</a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<div class="btn-group justify-content-start align-items-center">
+							<button
+								class="btn btn-toggle d-inline-flex align-items-center rounded border-0 pe-1 collapsed"
+								data-bs-toggle="collapse" data-bs-target="#people-players-3-collapse"
+								aria-expanded="false"></button>
+							<a class="btn btn-link d-inline-flex align-items-center ps-0"
+								href="/exhibits/show/roar-lion-roar/people/1960">Players
+								1960s-2000s</a>
+						</div>
+						<div id="people-players-3-collapse" class="collapse">
+							<ul class="list-unstyled ps-5">
+								<li><a class="d-block"
+										href="/exhibits/show/roar-lion-roar/people/1960/bill_campbell">Bill
+										Campbell</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1960/kaliades">Paul
+										Kaliades</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1960/witkowski">John
+										Witkowski</a></li>
+								<li><a class="d-block" href="/exhibits/show/roar-lion-roar/people/1960/reese">Johnathan
+										Reese</a></li>
+							</ul>
+						</div>
+					</li>
+
+
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="list-group-item">
+
+			<div class="d-flex gap-3 align-items-start">
+
+				<!-- section link -->
+				<a href="#" class="flex-grow-1 text-decoration-none">
+
+					<h6 class="mb-1">Places</h6>
+					<p class="mb-0 opacity-75">
+						Columbia Football has had several home fields since they started playing
+						the game in 1870.
+					</p>
+
+				</a>
+
+				<!-- control -->
+				<button class="btn btn-toggle awesome py-2 border-0 collapsed" data-bs-toggle="collapse"
+					data-bs-target="#places-collapse" aria-expanded="false" aria-controls="places-collapse"
+					aria-label="Toggle subsection"><i class="fa-duotone fa-solid fa-chevrons-right"></i>
+				</button>
+
+			</div>
+
+			<!-- collapse -->
+			<div id="places-collapse" class="collapse mt-2">
+				<ul class="list-unstyled ps-3 mb-0">
+					<li><a class="d-block" href="/exhibits/show/roar-lion-roar/places/south-field">South
+							Field</a></li>
+					<li><a class="d-block" href="/exhibits/show/roar-lion-roar/places/baker-field">Baker
+							Field</a></li>
+					<li><a class="d-block" href="/exhibits/show/roar-lion-roar/places/wien-stadium">Wien
+							Stadium</a></li>
+					<li><a class="d-block" href="/exhibits/show/roar-lion-roar/places/csc">Campbell Sports
+							Center</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+
+		<!-- <a aria-disabled="true" class="disabled list-group-item list-group-item-action d-flex gap-3 py-3"
+			aria-current="true">
+
+			<div class="d-flex gap-2 w-100 justify-content-between">
+				<div>
+					<h6 class="mb-0">Games</h6>
+					<p class="mb-0 opacity-75">There is more to football than the coaches and the players...</p>
+				</div>
+				<small><i class="fa-duotone fa-solid fa-chevrons-right fa-beat"></i></small>
+			</div>
+		</a> -->
+
+		<div class="list-group-item">
+
+			<div class="d-flex gap-3 align-items-start">
+
+				<!-- section link -->
+				<a href="#" class="flex-grow-1 text-decoration-none">
+
+					<h6 class="mb-1">Games</h6>
+					<p class="mb-0 opacity-75">
+						There is more to football than the coaches and the players...
+					</p>
+
+				</a>
+
+				<!-- control -->
+				<button class="btn btn-toggle awesome py-2 border-0 collapsed" data-bs-toggle="collapse"
+					data-bs-target="#games-collapse" aria-expanded="false" aria-controls="games-collapse"
+					aria-label="Toggle subsection"><i class="fa-duotone fa-solid fa-chevrons-right"></i>
+				</button>
+
+			</div>
+
+			<!-- collapse -->
+			<div id="games-collapse" class="collapse mt-2">
+				<ul class="list-unstyled ps-3 mb-0">
+					<li><a class="d-block" href="/exhibits/show/roar-lion-roar/games/cheerleaders">Cheerleaders</a>
+					</li>
+					<li><a class="d-block" href="/exhibits/show/roar-lion-roar/games/homecoming">Homecoming</a>
+					</li>
+					<li><a class="d-block" href="/exhibits/show/roar-lion-roar/games/mascots">Mascots</a></li>
+					<li><a class="d-block" href="/exhibits/show/roar-lion-roar/games/roar-lion-roar">Roar,
+							Lion, Roar</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<a aria-disabled="true" class="disabled list-group-item list-group-item-action d-flex gap-3 py-3"
+			aria-current="true">
+
+			<div class="d-flex gap-2 w-100 justify-content-between">
+				<div>
+					<h6 class="mb-0">Artwork</h6>
+					<p class="mb-0 opacity-75">Columbia Football has inspired some wonderful program covers as well as
+						covers for <em>Jester</em>...</p>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
