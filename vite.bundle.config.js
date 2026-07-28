@@ -27,7 +27,7 @@ export default defineConfig({
           ? 'cul-menu.bundle.js'
           : 'cul-menu.bundle.es.js'
     },
-    minify: 'esbuild',
+    minify: 'oxc',
     sourcemap: true,
     rollupOptions: {
       output: { banner }
