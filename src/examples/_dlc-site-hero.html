@@ -1,0 +1,17 @@
+<nav id="site-hero" class="navbar navbar-expand-md navbar-light bg-white py-0 hero-bg-blender">
+    <div class="container">
+    <section class="py-1 text-center container">
+        <div class="row pt-5 py-lg-5 pb-lg-0">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light display-6 {{{ heroTitleAddClasses }}}" style="cursor:pointer;" onclick="document.getElementById('primary').scrollIntoView({ behavior: 'smooth' }); return false">{{ heroTitle }}</h1>
+                <p class="lead text-body-secondary">
+					A gateway to digital reproductions and descriptions of photographs, posters, drawings, objects, ephemera, and manuscripts as well as other archival material from Columbia's rare and special collections.
+				</p>
+            </div>
+        </div>
+    </section>
+    </div>
+</nav>
+{{#if searchHero }}
+{{> _searchhero }}
+{{/if}}
