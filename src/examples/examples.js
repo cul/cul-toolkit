@@ -1,5 +1,11 @@
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 
+tooltipTriggerList.forEach((tooltipTriggerEl) => {
+	const tooltip = new bootstrap.Tooltip(tooltipTriggerEl, {
+		trigger: 'hover focus'
+	});
+
+	tooltipTriggerEl.addEventListener('click', () => {
+		tooltip.hide();
+	});
+});
