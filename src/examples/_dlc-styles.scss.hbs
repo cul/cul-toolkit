@@ -5,6 +5,14 @@
   opacity: 1;
 display:none
 }
+.pagination a:link,
+.pagination a:visited {
+  color: var(--bs-pagination-color);
+}
+
+.pagination .active > .page-link {
+  color: var(--bs-pagination-active-color);
+}
 
 .hide-scrollbar {
     scrollbar-width: none;
@@ -109,4 +117,13 @@ display:none
     pointer-events: none;
     cursor: default;
 }
+
+.facet-chevron {
+  transition: transform 0.2s ease-in-out;
+}
+
+.facet-toggle[aria-expanded="true"] .facet-chevron {
+  transform: rotate(90deg);
+}
+
 </style>
