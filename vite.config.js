@@ -126,6 +126,24 @@ const pageData = {
 	adobeFonts: true,
 	tocOpen: false,
   },
+  '/examples/dlc-item_page.html': {
+    title: 'cul-toolkit &raquo; examples &raquo; CUL Digital Library Collections &raquo; item page',
+    searchHero: true,
+    searchHeroPlaceholder: '&#x1F50D; Search Digital Collections&hellip;',
+    searchHeroNavAddClasses: 'pt-3 pb-2 bg-opacity-75',
+    heroSearchAddClasses: 'col col-md-4',
+    searchFormAddClasses: 'position-relative',
+    searchInputAddClasses: 'rounded-pill fs-5 w-100',
+    searchButtonAddStyle: 'position:absolute;right:0.3em;',
+    whichHero: '_dlc-site-hero',
+    heroTitle: 'Digital Library Collections',
+    heroTitleAddClasses: 'd-block text-primary-emphasis display-5',
+	hideAddr: true,
+    stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss', '_dlc-styles.scss'],
+    adobeFontsKit: 'uhm4ygw',
+	adobeFonts: true,
+	tocOpen: false,
+  },
 };
 
 const decodeHtml = (html) => {
@@ -195,6 +213,7 @@ export default defineConfig({
         onlineExhibitionsStandardPageLeaf: resolve(__dirname, 'src/examples/online_exhibitions-standard_page_leaf.html'),
         dlcTopLevelHome: resolve(__dirname, 'src/examples/dlc-top_level_home.html'),
         dlcSearchResults: resolve(__dirname, 'src/examples/dlc-search_results.html'),
+        dlcItemPage: resolve(__dirname, 'src/examples/dlc-item_page.html'),
       },
       output: {
         //entryFileNames: `assets/[name].js`,
