@@ -1,8 +1,13 @@
 {{> _head-examples }}
 
-{{> _dlc-wayfinding }}
+{{> _flashes }}
 
-<div class="collections_carousel">
+<section id="primary">
+{{> _dlc-wayfinding }}
+</section>
+
+<section id="collections_carousel">
+    <div class="collections_carousel">
     <section class="cul-collections_carousel bg-dark py-5">
         <div class="container-fluid p-md-0">
 
@@ -189,9 +194,10 @@
                 All Collections</a></p>
 
     </section>
-</div>
+    </div>
+</section>
 
-<section class="bg-secondary text-bg-secondary">
+<section id="about" class="bg-secondary text-bg-secondary">
     <div class="col-lg-6 col-md-8 mx-auto">
         <div class="text-center txt-light my-0 py-5 lead">
             <p>
@@ -207,9 +213,7 @@
     </div>
 </section>
 
-<section id="primary">
-
-
+<section id="featured">
     <div class="album py-5 bg-body-tertiary">
         <div class="mb-4 text-center">
             <h2 class="h5 text-muted">Featured Collections</h2>
@@ -417,26 +421,6 @@
             </div>
         </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="main-flashes" class="">
-                    <div class="flash_messages">
-
-
-
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-
 </section>
 
 {{> _dlc-fat-footer }}
