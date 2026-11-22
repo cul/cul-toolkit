@@ -101,12 +101,12 @@
                                         data-bs-toggle="modal" data-bs-target="#fullscreenModal">Look closer <i
                                             class="fa-duotone fa-solid fa-expand-wide"></i></button>
                                     <button type="button" class="btn btn-sm btn-outline-info text-info-emphasis"
-                                        data-bs-toggle="modal" data-bs-target="#downloadModal">Fun options <i
-                                            class="fa-duotone fa-light fa-person-pinball"></i></button>
+                                        data-bs-toggle="modal" data-bs-target="#downloadModal">Browse All <i class="fa-light fa-telescope"></i>
+                                    </button>
                                 </div>
                             </div>
 
-                            <div class="row row-cols-3 g-1">
+                            <div class="row row-cols-3 g-1 d-none">
                                 <div class="col">
                                     <img alt="" role="presentation" class="img-thumbnail"
                                         src="https://triclops.library.columbia.edu/iiif/2/featured/cul:1ns1rn8pwt/full/!256,256/0/default.jpg"><span
@@ -122,17 +122,142 @@
                                         src="https://triclops.library.columbia.edu/iiif/2/featured/cul:2ngf1vhj1b/full/!256,256/0/default.jpg"><span
                                         class="mui-1aq2yar-IIIFThumbnail-label small">Lorem 3</span>
                                 </div>
-                                <div class="col">
-                                    <img alt="" role="presentation" class="img-thumbnail"
-                                        src="https://triclops.library.columbia.edu/iiif/2/featured/cul:qnk98sf80s/full/!256,256/0/default.jpg"><span
-                                        class="mui-1aq2yar-IIIFThumbnail-label small">Lorem 4</span>
-                                </div>
-                                <div class="col">
-                                    <img alt="" role="presentation" class="img-thumbnail"
-                                        src="https://triclops.library.columbia.edu/iiif/2/featured/cul:nzs7h44jdj/full/!256,256/0/default.jpg"><span
-                                        class="mui-1aq2yar-IIIFThumbnail-label small">Lorem 5</span>
-                                </div>
                             </div>
+                            
+                            <div class="px-2 collapse d-md-block" id="sidebarFacets">
+                                
+                                <hr>
+
+                                <div class="facet mb-3">
+
+                                    <div class="facet-header d-flex align-items-center gap-2">
+
+                                        <button
+                                            class="btn btn-link facet-toggle text-decoration-none text-dark p-0 flex-grow-1 d-flex align-items-center justify-content-between"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#facet-content-0"
+                                            aria-expanded="false" aria-controls="facet-content-0">
+                                            Lorem
+                                            <i class="fa-solid fa-chevron-right facet-chevron small ms-2"
+                                                aria-hidden="true"></i>
+                                        </button>
+
+                                    </div>
+
+                                    <div id="facet-content-0" class="collapse">
+
+                                        <ul class="list-unstyled mt-2 mb-0">
+
+                                            <li class="py-1 d-flex align-items-center justify-content-between gap-2">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="#" class="text-decoration-none">Lorem ipsum dolor</a>
+                                                    <a href="#" class="text-secondary" title="More information"
+                                                        aria-label="More information" 
+                                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                                        <i class="fa-solid fa-circle-info small" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="text-secondary text-decoration-none">3,852</a>
+                                            </li>
+
+                                            <li class="py-1 d-flex justify-content-between gap-2">
+                                                <a href="#" class="text-decoration-none">Lorem ipsum dolor sit amet</a>
+                                                <a href="#" class="text-secondary text-decoration-none">161</a>
+                                            </li>
+
+                                            <li class="py-1 d-flex justify-content-between gap-2">
+                                                <a href="#" class="text-decoration-none">Lorem ipsum</a>
+                                                <a href="#" class="text-secondary text-decoration-none">147</a>
+                                            </li>
+
+                                            <li class="py-1 d-flex justify-content-between gap-2">
+                                                <a href="#" class="text-decoration-none">Lorem ipsum dolor sit</a>
+                                                <a href="#" class="text-secondary text-decoration-none">18</a>
+                                            </li>
+
+                                            <li class="py-1 d-flex justify-content-between gap-2">
+                                                <a href="#" class="text-decoration-none">Lorem ipsum dolor sit amet</a>
+                                                <a href="#" class="text-secondary text-decoration-none">8</a>
+                                            </li>
+
+                                            <li class="more_facets pt-2">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#moreFacetsModal"
+                                                    data-turbo="false">
+                                                    More <span class="visually-hidden">Lorem Ipsum</span> »
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="facet mb-3">
+
+                                    <div class="facet-header d-flex align-items-center gap-2">
+
+                                        <button
+                                            class="btn btn-link facet-toggle text-decoration-none text-dark p-0 flex-grow-1 d-flex align-items-center justify-content-between"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#facet-content-1"
+                                            aria-expanded="false" aria-controls="facet-content-1">
+                                            Ipsum/Dolor
+                                            <i class="fa-solid fa-chevron-right facet-chevron small ms-2"
+                                                aria-hidden="true"></i>
+                                        </button>
+
+                                    </div>
+
+                                    <div id="facet-content-1" class="collapse">
+
+                                        <ul class="list-unstyled mt-2 mb-0">
+
+                                            <li class="py-1 d-flex align-items-center justify-content-between gap-2">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="#" class="text-decoration-none">Lorem ipsum dolor</a>
+                                                    <a href="#" class="text-secondary" title="More information"
+                                                        aria-label="More information">
+                                                        <i class="fa-solid fa-circle-info small" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="text-secondary text-decoration-none">1,312</a>
+                                            </li>
+
+                                            <li class="py-1 d-flex justify-content-between gap-2">
+                                                <a href="#" class="text-decoration-none">Lorem ipsum dolor sit amet</a>
+                                                <a href="#" class="text-secondary text-decoration-none">212</a>
+                                            </li>
+
+                                            <li class="py-1 d-flex justify-content-between gap-2">
+                                                <a href="#" class="text-decoration-none">Lorem ipsum</a>
+                                                <a href="#" class="text-secondary text-decoration-none">161</a>
+                                            </li>
+
+                                            <li class="py-1 d-flex justify-content-between gap-2">
+                                                <a href="#" class="text-decoration-none">Lorem ipsum dolor sit</a>
+                                                <a href="#" class="text-secondary text-decoration-none">23</a>
+                                            </li>
+
+                                            <li class="py-1 d-flex justify-content-between gap-2">
+                                                <a href="#" class="text-decoration-none">Lorem ipsum dolor sit amet</a>
+                                                <a href="#" class="text-secondary text-decoration-none">7</a>
+                                            </li>
+
+                                            <li class="more_facets pt-2">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#moreFacetsModal"
+                                                    data-turbo="false">
+                                                    More <span class="visually-hidden">Lorem Ipsum</span> »
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
                         </div>
 
                     </aside>
