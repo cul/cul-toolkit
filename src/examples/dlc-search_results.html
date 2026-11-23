@@ -4,9 +4,9 @@
 
 <section id="primary">
 
-    <div class="py-2 bg-body-light">
+    <div class="py-4 bg-body-light">
         <div class="container">
-            
+
             <div class="py-4">
                 <div class="row g-4">
 
@@ -15,10 +15,11 @@
                             <div class="flex-grow-1">
                                 <h2 class="h4 mb-1">Search Results</h2>
                                 <p class="small text-secondary mb-0">Showing 1–8 of 3,852 results <span
-                                        class="text-success">(in various design arrangements)</span></p>
+                                        class="text-warning">(in various design arrangements)</span></p>
                             </div>
                             <div class="d-flex align-items-center gap-2">
-                                <select aria-label="Sort results by" id="sort-results" class="form-select form-select-sm">
+                                <select aria-label="Sort results by" id="sort-results"
+                                    class="form-select form-select-sm">
                                     <option>Relevance</option>
                                     <option>Title A–Z</option>
                                     <option>Title Z–A</option>
@@ -27,13 +28,59 @@
                                 </select>
                             </div>
                             <div class="d-flex align-items-center gap-2">
-                                <select aria-label="Number of results per page" id="sort-results" class="form-select form-select-sm">
+                                <select aria-label="Number of results per page" id="sort-results"
+                                    class="form-select form-select-sm">
                                     <option>20 per page</option>
                                     <option>60 per page</option>
                                     <option>9000 per page</option>
                                 </select>
                             </div>
                         </div>
+
+
+
+                        <div class="py-3 mb-1 border-top">
+                            <div id="appliedParams"
+                                class="constraints-container d-flex flex-wrap align-items-center gap-2">
+
+                                <h2 class="visually-hidden">Search Constraints</h2>
+
+                                <a class="catalog_startOverLink btn btn-primary btn-sm" href="/archives">
+                                    Start Over
+                                </a>
+
+                                <span class="constraints-label visually-hidden">
+                                    You searched for:
+                                </span>
+
+                                <span class="input-group input-group-sm w-auto">
+                                    <span class="input-group-text text-secondary border-success bg-transparent">
+                                        highlight
+                                    </span>
+                                    <a class="btn btn-outline-success" href="#" title="Remove constraint"
+                                        aria-label="Remove constraint" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-title="Remove">
+                                        <i class="fa-sharp fa-solid fa-xmark" aria-hidden="true"></i>
+                                        <span class="visually-hidden">Remove constraint highlight</span>
+                                    </a>
+                                </span>
+
+                                <span class="input-group input-group-sm w-auto">
+                                    <span class="input-group-text text-success border-success bg-transparent">
+                                        Repository: Lorem ipsum Dolor Archive
+                                    </span>
+                                    <a class="btn btn-outline-success" href="#" title="Remove constraint"
+                                        aria-label="Remove constraint" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-title="Remove">
+                                        <i class="fa-sharp fa-solid fa-xmark" aria-hidden="true"></i>
+                                        <span class="visually-hidden">Remove constraint Repository: Lorem ipsum
+                                            dolor</span>
+                                    </a>
+                                </span>
+
+                            </div>
+                        </div>
+
 
                         <article class="card mb-3">
                             <div class="row g-0">
@@ -88,7 +135,7 @@
                                 <div class="col-8 col-sm-9 col-lg-10">
                                     <div class="card-body">
                                         <h2 class="h5"><a href="#" class="text-decoration-none">Lorem Ipsum Consectetur
-                                                Adipiscing</a></h2>
+                                                Adipiscing <i class="fa-sharp fa-solid fa-trophy-star"></i></a> </h2>
                                         <p class="small text-secondary mb-2">
                                             <i class="fa-solid fa-building-columns"></i>
                                             <span class="blacklight-lib_collection_ssm"><a
@@ -218,7 +265,47 @@
                             </div>
 
                             <div class="collapse d-md-block" id="sidebarFacets">
-                                
+
+                                <hr>
+
+
+                                <div class="facet mb-3">
+
+                                    <div class="facet-header d-flex align-items-center gap-2">
+
+                                        <button
+                                            class="btn btn-link facet-toggle text-decoration-none text-dark p-0 flex-grow-1 d-flex align-items-center justify-content-between"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#facet-content-00"
+                                            aria-expanded="true" aria-controls="facet-content-00">
+                                            Repository
+                                            <i class="fa-solid fa-chevron-right facet-chevron small ms-2"
+                                                aria-hidden="true"></i>
+                                        </button>
+
+                                    </div>
+
+                                    <div id="facet-content-00" class="collapse show">
+
+                                        <ul class="list-unstyled mt-2 mb-0">
+
+                                            <li class="py-1 d-flex align-items-center justify-content-between gap-2">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="#" class="text-decoration-none text-success">Lorem Ipsum
+                                                        Dolor Archive</a>
+                                                    <a href="#" class="text-success-emphasis" title="Remove constraint"
+                                                        aria-label="Remove constraint" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" data-bs-title="Remove">
+                                                        <i class="fa-regular fa-circle-xmark small"></i>
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="text-success-emphasis text-decoration-none">3,852</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+
                                 <hr>
 
                                 <div class="facet mb-3">
@@ -244,8 +331,8 @@
                                                 <div class="d-flex align-items-center gap-2">
                                                     <a href="#" class="text-decoration-none">Lorem ipsum dolor</a>
                                                     <a href="#" class="text-secondary" title="More information"
-                                                        aria-label="More information" 
-                                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                                        aria-label="More information" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" data-bs-title="More information">
                                                         <i class="fa-solid fa-circle-info small" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -309,7 +396,8 @@
                                                 <div class="d-flex align-items-center gap-2">
                                                     <a href="#" class="text-decoration-none">Lorem ipsum dolor</a>
                                                     <a href="#" class="text-secondary" title="More information"
-                                                        aria-label="More information">
+                                                        aria-label="More information" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" data-bs-title="More information">
                                                         <i class="fa-solid fa-circle-info small" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
