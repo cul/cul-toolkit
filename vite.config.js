@@ -162,6 +162,25 @@ const pageData = {
 	adobeFonts: true,
 	tocOpen: false,
   },
+  '/examples/dlc-subsite_landing_page.html': {
+    title: 'cul-toolkit &raquo; examples &raquo; CUL Digital Library Collections &raquo; Subsite Landing Page',
+    searchHero: true,
+    searchHeroPlaceholder: '&#x1F50D; Search Digital Collections&hellip;',
+    searchHeroNavAddClasses: 'pt-3 pb-2 bg-opacity-75',
+    heroSearchAddClasses: 'col col-md-4',
+    searchFormAddClasses: 'position-relative',
+    searchInputAddClasses: 'rounded-pill fs-5 w-100',
+    searchButtonAddStyle: 'position:absolute;right:0.3em;',
+    whichHero: '_dlc-site-hero',
+    heroTitle: 'Digital Library Collections',
+    heroTitleAddClasses: 'd-block text-primary-emphasis display-5',
+    heroBandImgUrl: 'https://triclops.library.columbia.edu/iiif/2/standard/ldpd:114724/full/970,/0/default.jpg',
+	hideAddr: true,
+    stylesheet: ['_example-styles.scss', '_online-exhibitions-styles.scss', '_dlc-styles.scss'],
+    adobeFontsKit: 'uhm4ygw',
+	adobeFonts: true,
+	tocOpen: false,
+  },
 };
 
 const decodeHtml = (html) => {
@@ -233,6 +252,7 @@ export default defineConfig({
         dlcSearchResults: resolve(__dirname, 'src/examples/dlc-search_results.html'),
         dlcItemPage: resolve(__dirname, 'src/examples/dlc-item_page.html'),
         dlcSearchableSubsiteHome: resolve(__dirname, 'src/examples/dlc-searchable_subsite_home.html'),
+        dlcSubsiteLandingPage: resolve(__dirname, 'src/examples/dlc-subsite_landing_page.html'),
       },
       output: {
         //entryFileNames: `assets/[name].js`,
