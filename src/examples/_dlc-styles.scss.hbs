@@ -1,0 +1,142 @@
+<style>
+    #primary {
+        scroll-margin-top: 70px;
+    }
+
+    .dlc-hero {
+        min-height: 4rem;
+        background-image: image-set(url("https://triclops.library.columbia.edu/iiif/2/standard/cul:pc866t1gdf/full/1280,/0/default.jpg") type("image/jpeg"));
+        background-size: cover;
+        background-blend-mode: color-dodge;
+        background-color: rgb(108, 117, 125) !important;
+        background-position: center 30%;
+    }
+
+    .trajan-pro {
+        font-family: trajan-pro-3, trajan-pro, "Trajan Pro 3", system-ui, -apple-system, sans-serif;
+        font-weight: 400;
+    }
+
+    .form-control::placeholder {
+        color: var(--bs-light-color);
+        opacity: 1;
+        display: none
+    }
+
+    .pagination a:link,
+    .pagination a:visited {
+        color: var(--bs-pagination-color);
+    }
+
+    .pagination .active>.page-link {
+        color: var(--bs-pagination-active-color);
+    }
+
+    .hide-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .wayfinder {
+        position: relative;
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .wayfinder #navScrollWayfinder {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .wayfinder::before,
+    .wayfinder::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 75px;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity .25s ease;
+    }
+
+    .wayfinder::before {
+        left: 0;
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, .95) 30%,
+                rgba(255, 255, 255, .65) 65%,
+                transparent 100%);
+    }
+
+    .wayfinder::after {
+        right: 0;
+        background: linear-gradient(to left,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, .95) 30%,
+                rgba(255, 255, 255, .65) 65%,
+                transparent 100%);
+    }
+
+    .wayfinder:not(.at-start)::before,
+    .wayfinder:not(.at-end)::after {
+        opacity: 1;
+    }
+
+    .wayfinder .nav-scroll-hint {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 28px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        pointer-events: auto;
+        opacity: 0;
+        transition: opacity .25s ease;
+    }
+
+    .wayfinder .nav-scroll-hint-left {
+        left: 0;
+    }
+
+    .wayfinder .nav-scroll-hint-right {
+        right: 0;
+    }
+
+    .wayfinder:not(.at-start) .nav-scroll-hint-left,
+    .wayfinder:not(.at-end) .nav-scroll-hint-right {
+        opacity: 1;
+    }
+
+    .wayfinder .nav-scroll-hint:hover:not(:disabled) {
+        color: #3a6fa2 !important;
+    }
+
+    .wayfinder .nav-scroll-hint:focus-visible {
+        outline: 2px solid #3a6fa2;
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+
+    .wayfinder .nav-scroll-hint:disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .facet-chevron {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .facet-toggle[aria-expanded="true"] .facet-chevron {
+        transform: rotate(90deg);
+    }
+</style>
